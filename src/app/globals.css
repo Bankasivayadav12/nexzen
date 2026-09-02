@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+:root {
+  /* Color 1: Obsidian Dark (Typography, Brand Logo, Primary Dark Elements) */
+  --obsidian: #09101D;
+  --obsidian-muted: #475569;
+  
+  /* Color 2: Electric Gradient Blue & Ocean Cyan (Primary Accent, Badges, CTAs, Highlights) */
+  --brand-blue: #0066FF;
+  --brand-cyan: #00C6FF;
+
+  /* Color 3: Ice Canvas White & Elevated Glass Surface (Canvas & Elevated White Cards) */
+  --ice-bg: #F4F7FB;
+  --card-surface: #FFFFFF;
+}
+
+body {
+  background-color: var(--ice-bg);
+  color: var(--obsidian);
+  font-family: var(--font-jakarta), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Custom Utilities for Premium Aesthetics */
+.glass-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  box-shadow: 0 20px 40px -15px rgba(0, 102, 255, 0.06), 0 4px 12px rgba(9, 16, 29, 0.03);
+}
+
+.glass-hero-container {
+  background: linear-gradient(135deg, rgba(220, 235, 255, 0.65) 0%, rgba(225, 248, 252, 0.65) 100%);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(0, 102, 255, 0.12);
+  box-shadow: 0 25px 50px -12px rgba(0, 102, 255, 0.08);
+}
+
+.btn-gradient {
+  background: linear-gradient(135deg, #0066FF 0%, #00C6FF 100%);
+  box-shadow: 0 10px 25px -5px rgba(0, 102, 255, 0.4);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-gradient:hover {
+  box-shadow: 0 15px 30px -5px rgba(0, 102, 255, 0.55);
+  transform: translateY(-2px);
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, #0066FF 0%, #00C6FF 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
