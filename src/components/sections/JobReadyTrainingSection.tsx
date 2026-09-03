@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowRight, CheckCircle2, ChevronRight, X, Briefcase, Sparkles, Building2 } from "lucide-react";
+import { ChevronRight, X } from "lucide-react";
 
 interface JobReadyTrainingSectionProps {
   onOpenEnquireModal: () => void;
@@ -106,7 +106,7 @@ export default function JobReadyTrainingSection({ onOpenEnquireModal }: JobReady
   const activeDomain = domainsData.find((d) => d.id === activeDomainId) || domainsData[0];
 
   return (
-    <section id="job-ready-training-page" className="py-14 sm:py-16 bg-[#F4F7FB] w-full min-h-screen">
+    <section id="job-ready-training-page" className="py-14 sm:py-16 bg-[#F4F7FB] w-full border-b border-slate-200/60">
       <div className="w-full px-4 sm:px-8 lg:px-12 xl:px-16">
         
         {/* Top Header Badge & Title */}
@@ -123,14 +123,14 @@ export default function JobReadyTrainingSection({ onOpenEnquireModal }: JobReady
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
           
           {/* Left Column: Dark Navy Domains Selector */}
-          <div className="lg:col-span-4 bg-[#091427] text-white rounded-3xl p-6 sm:p-7 flex flex-col justify-between shadow-xl space-y-4">
+          <div className="lg:col-span-4 bg-[#091F38] text-white rounded-3xl p-6 sm:p-7 flex flex-col justify-between shadow-xl space-y-4 border border-slate-800">
             <div>
               <h2 className="text-2xl font-black text-white mb-4 tracking-tight">
                 Domains
               </h2>
               
               {/* Domain Vertical Buttons */}
-              <div className="space-y-2.5">
+              <div className="flex flex-row lg:flex-col overflow-x-auto pb-2 lg:pb-0 gap-2 sm:gap-2.5 scrollbar-none">
                 {domainsData.map((domain) => {
                   const isActive = activeDomainId === domain.id;
                   return (
@@ -139,7 +139,7 @@ export default function JobReadyTrainingSection({ onOpenEnquireModal }: JobReady
                       whileHover={{ x: 3 }}
                       whileTap={{ scale: 0.98 }}
                       onClick={() => setActiveDomainId(domain.id)}
-                      className={`w-full text-left px-5 py-3 rounded-2xl text-xs sm:text-sm font-bold transition-all duration-200 ${
+                      className={`whitespace-nowrap lg:whitespace-normal shrink-0 lg:shrink text-left px-4 sm:px-5 py-2.5 sm:py-3 rounded-2xl text-xs sm:text-sm font-bold transition-all duration-200 ${
                         isActive
                           ? "bg-white text-[#09101D] shadow-md font-extrabold"
                           : "bg-white/10 hover:bg-white/20 text-slate-200 border border-white/10"
@@ -192,28 +192,28 @@ export default function JobReadyTrainingSection({ onOpenEnquireModal }: JobReady
             <div className="flex flex-wrap items-center gap-3 pt-4 border-t border-slate-100">
               <button
                 onClick={onOpenEnquireModal}
-                className="btn-gradient text-white font-bold text-xs sm:text-sm px-6 py-3 rounded-full shadow-md shadow-blue-500/20 hover:shadow-blue-500/35 transition-all duration-200"
+                className="btn-gradient text-white font-bold text-xs sm:text-sm px-6 py-3 rounded-full shadow-md shadow-blue-500/20 hover:shadow-blue-500/35 transition-all duration-200 w-full sm:w-auto"
               >
                 Explore Roles
               </button>
 
               <button
                 onClick={() => {
-                  const el = document.getElementById("upcoming-batches");
+                  const el = document.getElementById("accounting-roles");
                   if (el) {
                     el.scrollIntoView({ behavior: "smooth" });
                   } else {
-                    window.location.href = "/upcoming-batches";
+                    onOpenEnquireModal();
                   }
                 }}
-                className="bg-white hover:bg-slate-50 text-[#09101D] font-bold text-xs sm:text-sm px-6 py-3 rounded-full border border-slate-200 shadow-xs hover:border-slate-300 transition-all duration-200"
+                className="bg-white hover:bg-slate-50 text-[#09101D] font-bold text-xs sm:text-sm px-6 py-3 rounded-full border border-slate-200 shadow-xs hover:border-slate-300 transition-all duration-200 w-full sm:w-auto"
               >
-                Upcoming Batches
+                Accounting Roles Page
               </button>
 
               <button
                 onClick={onOpenEnquireModal}
-                className="bg-white hover:bg-slate-50 text-[#09101D] font-bold text-xs sm:text-sm px-6 py-3 rounded-full border border-slate-200 shadow-xs hover:border-slate-300 transition-all duration-200"
+                className="bg-white hover:bg-slate-50 text-[#09101D] font-bold text-xs sm:text-sm px-6 py-3 rounded-full border border-slate-200 shadow-xs hover:border-slate-300 transition-all duration-200 w-full sm:w-auto"
               >
                 Talk to Counsellor
               </button>
@@ -228,12 +228,12 @@ export default function JobReadyTrainingSection({ onOpenEnquireModal }: JobReady
       {/* Role Details Interactive Modal */}
       <AnimatePresence>
         {selectedRole && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-md">
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-slate-900/60 backdrop-blur-md">
             <motion.div
               initial={{ opacity: 0, scale: 0.95, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 20 }}
-              className="bg-white rounded-3xl max-w-lg w-full p-6 sm:p-8 shadow-2xl border border-slate-100 relative overflow-hidden"
+              className="bg-white rounded-3xl max-w-lg w-full p-5 sm:p-8 shadow-2xl border border-slate-100 relative overflow-hidden max-h-[90vh] overflow-y-auto"
             >
               <button
                 onClick={() => setSelectedRole(null)}

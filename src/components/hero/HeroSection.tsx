@@ -20,7 +20,7 @@ export default function HeroSection({ onOpenEnquireModal }: HeroSectionProps) {
           </div>
 
           {/* Right Column: Interactive Professional Learning Space */}
-          <div className="lg:col-span-6 flex">
+          <div className="hidden lg:flex lg:col-span-6">
             <HeroVisual />
           </div>
 

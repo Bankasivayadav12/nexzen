@@ -78,6 +78,7 @@ export default function JobsPageSection({ onOpenEnquireModal }: JobsPageSectionP
   const [selectedLocation, setSelectedLocation] = useState("All");
   const [selectedExperience, setSelectedExperience] = useState("All");
   const [selectedJob, setSelectedJob] = useState<JobOpportunity | null>(null);
+  const [showMobileFilters, setShowMobileFilters] = useState(false);
 
   const filteredJobs = jobsList.filter((j) => {
     const matchesSearch = j.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -103,11 +104,27 @@ export default function JobsPageSection({ onOpenEnquireModal }: JobsPageSectionP
           </h1>
         </div>
 
+        {/* Mobile Filters Toggle Button */}
+        <div className="lg:hidden mb-4">
+          <button
+            onClick={() => setShowMobileFilters(!showMobileFilters)}
+            className="w-full bg-white border border-slate-200 rounded-2xl p-3.5 text-xs font-extrabold text-[#09101D] flex items-center justify-between shadow-xs"
+          >
+            <span className="flex items-center gap-2">
+              <Filter className="w-4 h-4 text-[#0066FF]" />
+              <span>{showMobileFilters ? "Hide Search Filters" : "Filter Job Opportunities"}</span>
+            </span>
+            <span className="text-[#0066FF] text-xs font-bold bg-blue-50 px-2.5 py-1 rounded-full">
+              {filteredJobs.length} Jobs Available
+            </span>
+          </button>
+        </div>
+
         {/* Main Grid: Left Filters Sidebar + Right 2x2 Opportunity Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 mb-8 items-stretch">
           
           {/* Left Column: Filters Sidebar Container */}
-          <div className="lg:col-span-4 bg-white rounded-3xl p-6 border border-slate-200/80 shadow-xs space-y-4">
+          <div className={`${showMobileFilters ? "block" : "hidden"} lg:block lg:col-span-4 bg-white rounded-3xl p-6 border border-slate-200/80 shadow-xs space-y-4`}>
             <h2 className="text-xl font-black text-[#09101D] border-b border-slate-100 pb-3">
               Filters
             </h2>
@@ -293,12 +310,12 @@ export default function JobsPageSection({ onOpenEnquireModal }: JobsPageSectionP
       {/* Job Opportunity Detail Modal */}
       <AnimatePresence>
         {selectedJob && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-md">
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-slate-900/60 backdrop-blur-md">
             <motion.div
               initial={{ opacity: 0, scale: 0.95, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 20 }}
-              className="bg-white rounded-3xl max-w-lg w-full p-6 sm:p-8 shadow-2xl border border-slate-100 relative overflow-hidden"
+              className="bg-white rounded-3xl max-w-lg w-full p-5 sm:p-8 shadow-2xl border border-slate-100 relative overflow-hidden max-h-[90vh] overflow-y-auto"
             >
               <button
                 onClick={() => setSelectedJob(null)}

@@ -2,31 +2,20 @@
 
 import React, { useState } from "react";
 import Navbar from "@/components/layout/Navbar";
-import JobReadyTrainingSection from "@/components/sections/JobReadyTrainingSection";
-import AccountingRolesSection from "@/components/sections/AccountingRolesSection";
-import UpcomingBatchesSection from "@/components/sections/UpcomingBatchesSection";
+import CareerGuidanceSection from "@/components/sections/CareerGuidanceSection";
 import Footer from "@/components/layout/Footer";
 import EnquireModal from "@/components/ui/EnquireModal";
 
-export default function TrainingPage() {
+export default function CareerGuidancePage() {
   const [isEnquireModalOpen, setIsEnquireModalOpen] = useState(false);
 
   return (
     <div className="min-h-screen flex flex-col bg-[#F4F7FB] selection:bg-[#0066FF] selection:text-white">
-      {/* Navbar */}
       <Navbar onOpenEnquireModal={() => setIsEnquireModalOpen(true)} />
-
-      {/* Main Job-Ready Training Content */}
       <main className="flex-grow">
-        <AccountingRolesSection onOpenEnquireModal={() => setIsEnquireModalOpen(true)} />
-        <JobReadyTrainingSection onOpenEnquireModal={() => setIsEnquireModalOpen(true)} />
-  
+        <CareerGuidanceSection onOpenEnquireModal={() => setIsEnquireModalOpen(true)} />
       </main>
-
-      {/* Footer */}
       <Footer onOpenEnquireModal={() => setIsEnquireModalOpen(true)} />
-
-      {/* Interactive Enquiry Modal */}
       <EnquireModal isOpen={isEnquireModalOpen} onClose={() => setIsEnquireModalOpen(false)} />
     </div>
   );

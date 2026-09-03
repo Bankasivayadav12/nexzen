@@ -102,30 +102,30 @@ export default function ProfessionalCoursesSection({ onOpenEnquireModal }: Profe
         </div>
 
         {/* 7 Qualifications Cards Grid Row */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-4 mb-8">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-3 sm:gap-4 mb-8">
           {coursesData.map((course) => (
             <motion.div
               key={course.code}
               whileHover={{ y: -6, boxShadow: "0 20px 30px -10px rgba(0, 102, 255, 0.12)" }}
               transition={{ duration: 0.25 }}
-              className="bg-white rounded-3xl p-5 border border-slate-200/80 shadow-xs flex flex-col justify-between hover:border-blue-300 transition-colors group cursor-pointer"
+              className="bg-white rounded-3xl p-4 sm:p-5 border border-slate-200/80 shadow-xs flex flex-col justify-between hover:border-blue-300 transition-colors group cursor-pointer"
               onClick={() => setSelectedCourse(course)}
             >
               <div>
                 {/* Big Blue Logo / Abbreviation */}
-                <div className="text-3xl font-black text-[#0066FF] tracking-tight mb-0.5">
+                <div className="text-2xl sm:text-3xl font-black text-[#0066FF] tracking-tight mb-0.5">
                   {course.bigLogo}
                 </div>
 
                 {/* Qualification Code/Name */}
-                <h3 className="text-sm font-extrabold text-[#09101D] group-hover:text-[#0066FF] transition-colors">
+                <h3 className="text-xs sm:text-sm font-extrabold text-[#09101D] group-hover:text-[#0066FF] transition-colors leading-tight">
                   {course.code}
                 </h3>
 
                 {/* Features List */}
-                <div className="space-y-1 my-4 pt-3 border-t border-slate-100">
+                <div className="space-y-1 my-3 sm:my-4 pt-2.5 sm:pt-3 border-t border-slate-100">
                   {course.features.map((f, idx) => (
-                    <div key={idx} className="text-[11px] text-slate-500 font-medium">
+                    <div key={idx} className="text-[10px] sm:text-[11px] text-slate-500 font-medium">
                       {f}
                     </div>
                   ))}
@@ -156,7 +156,7 @@ export default function ProfessionalCoursesSection({ onOpenEnquireModal }: Profe
           {/* Right Gradient CTA Button */}
           <button
             onClick={onOpenEnquireModal}
-            className="btn-gradient text-white text-xs sm:text-sm font-bold px-8 py-3.5 rounded-full shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 transition-all duration-200 shrink-0"
+            className="btn-gradient text-white text-xs sm:text-sm font-bold px-8 py-3.5 rounded-full shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 transition-all duration-200 shrink-0 w-full sm:w-auto"
           >
             Explore Professional Courses
           </button>
@@ -168,12 +168,12 @@ export default function ProfessionalCoursesSection({ onOpenEnquireModal }: Profe
       {/* Qualification Modal Detail */}
       <AnimatePresence>
         {selectedCourse && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-md">
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-slate-900/60 backdrop-blur-md">
             <motion.div
               initial={{ opacity: 0, scale: 0.95, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 20 }}
-              className="bg-white rounded-3xl max-w-xl w-full p-6 sm:p-8 shadow-2xl border border-slate-100 relative overflow-hidden"
+              className="bg-white rounded-3xl max-w-xl w-full p-5 sm:p-8 shadow-2xl border border-slate-100 relative overflow-hidden max-h-[90vh] overflow-y-auto"
             >
               <button
                 onClick={() => setSelectedCourse(null)}

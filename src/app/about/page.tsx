@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import Navbar from "@/components/layout/Navbar";
 import AboutSection from "@/components/sections/AboutSection";
+import FacultyExpertsSection from "@/components/sections/FacultyExpertsSection";
 import Footer from "@/components/layout/Footer";
 import EnquireModal from "@/components/ui/EnquireModal";
 
@@ -14,6 +15,7 @@ export default function AboutPage() {
       <Navbar onOpenEnquireModal={() => setIsEnquireModalOpen(true)} />
       <main className="flex-grow">
         <AboutSection onOpenEnquireModal={() => setIsEnquireModalOpen(true)} />
+        <FacultyExpertsSection onOpenEnquireModal={() => setIsEnquireModalOpen(true)} />
       </main>
       <Footer onOpenEnquireModal={() => setIsEnquireModalOpen(true)} />
       <EnquireModal isOpen={isEnquireModalOpen} onClose={() => setIsEnquireModalOpen(false)} />

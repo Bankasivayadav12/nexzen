@@ -18,13 +18,20 @@ export default function Footer({ onOpenEnquireModal }: FooterProps) {
           
           {/* Brand Info */}
           <div className="lg:col-span-2 space-y-4">
-            <div className="flex flex-col">
-              <span className="text-2xl font-black text-white tracking-tight">
-                NEXZEN ASSET
-              </span>
-              <span className="text-xs text-blue-400 font-semibold tracking-wide mt-0.5">
-                An evolution of Asset Integrated Info Systems · 25+ Years Legacy
-              </span>
+            <div className="flex items-center gap-3.5">
+              <img
+                src="/logo.jpg"
+                alt="NexZen Asset Private Limited"
+                className="h-16 sm:h-20 lg:h-24 w-auto object-contain rounded-xl bg-white p-1.5 shadow-md"
+              />
+              <div className="flex flex-col">
+                <span className="text-2xl sm:text-3xl font-black text-white tracking-tight">
+                  NEXZEN <span className="text-[#C69214]">ASSET</span>
+                </span>
+                <span className="text-xs text-[#C69214] font-bold tracking-wide mt-0.5">
+                  An evolution of Asset Integrated Info Systems · 25+ Years Legacy
+                </span>
+              </div>
             </div>
             <p className="text-xs text-slate-400 leading-relaxed max-w-sm">
               Empowering students and professionals with top-tier academic coaching, accounting certifications, practical job training, and strategic workforce solutions.

@@ -173,28 +173,28 @@ export default function AcademicsSection({ onOpenEnquireModal }: AcademicsSectio
             <div className="flex flex-wrap items-center gap-2 sm:gap-3 pt-2">
               
               {/* Step 1 */}
-              <div className="bg-[#F8FAFC] px-4 py-2.5 rounded-full border border-slate-200 text-xs font-extrabold text-[#09101D] shadow-2xs">
+              <div className="bg-[#F8FAFC] px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-full border border-slate-200 text-xs font-extrabold text-[#09101D] shadow-2xs">
                 Subject Support
               </div>
 
-              <ArrowRight className="w-4 h-4 text-[#0066FF] shrink-0" />
+              <ArrowRight className="w-4 h-4 text-[#0066FF] shrink-0 hidden xs:block" />
 
               {/* Step 2 */}
-              <div className="bg-[#F8FAFC] px-4 py-2.5 rounded-full border border-slate-200 text-xs font-extrabold text-[#09101D] shadow-2xs">
+              <div className="bg-[#F8FAFC] px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-full border border-slate-200 text-xs font-extrabold text-[#09101D] shadow-2xs">
                 Concepts
               </div>
 
-              <ArrowRight className="w-4 h-4 text-[#0066FF] shrink-0" />
+              <ArrowRight className="w-4 h-4 text-[#0066FF] shrink-0 hidden xs:block" />
 
               {/* Step 3 */}
-              <div className="bg-[#F8FAFC] px-4 py-2.5 rounded-full border border-slate-200 text-xs font-extrabold text-[#09101D] shadow-2xs">
+              <div className="bg-[#F8FAFC] px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-full border border-slate-200 text-xs font-extrabold text-[#09101D] shadow-2xs">
                 Exam Readiness
               </div>
 
-              <ArrowRight className="w-4 h-4 text-[#0066FF] shrink-0" />
+              <ArrowRight className="w-4 h-4 text-[#0066FF] shrink-0 hidden xs:block" />
 
               {/* Step 4 */}
-              <div className="bg-gradient-to-r from-blue-50 to-cyan-50 px-4 py-2.5 rounded-full border border-blue-200 text-xs font-black text-[#0066FF] shadow-2xs">
+              <div className="bg-gradient-to-r from-blue-50 to-cyan-50 px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-full border border-blue-200 text-xs font-black text-[#0066FF] shadow-2xs">
                 Career Direction
               </div>
 
@@ -208,12 +208,12 @@ export default function AcademicsSection({ onOpenEnquireModal }: AcademicsSectio
       {/* Interactive Academic Program Modal */}
       <AnimatePresence>
         {selectedProgram && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-md">
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-slate-900/60 backdrop-blur-md">
             <motion.div
               initial={{ opacity: 0, scale: 0.95, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 20 }}
-              className="bg-white rounded-3xl max-w-xl w-full p-6 sm:p-8 shadow-2xl border border-slate-100 relative overflow-hidden"
+              className="bg-white rounded-3xl max-w-xl w-full p-5 sm:p-8 shadow-2xl border border-slate-100 relative overflow-hidden max-h-[90vh] overflow-y-auto"
             >
               <button
                 onClick={() => setSelectedProgram(null)}

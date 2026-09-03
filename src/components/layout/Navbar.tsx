@@ -27,17 +27,24 @@ export default function Navbar({ onOpenEnquireModal }: NavbarProps) {
   const pathname = usePathname();
 
   return (
-    <header className="w-full bg-white/90 backdrop-blur-md border-b border-slate-100 sticky top-0 z-50">
-      <div className="w-full px-4 sm:px-8 lg:px-12 xl:px-16 py-3 flex items-center justify-between gap-4">
+    <header className="w-full bg-white/90 backdrop-blur-md border-b border-slate-100 sticky top-0 z-50 overflow-x-clip">
+      <div className="w-full px-3 sm:px-8 lg:px-12 xl:px-16 py-2.5 sm:py-3 flex items-center justify-between gap-2 sm:gap-4">
         
         {/* Brand Logo & Subtitle */}
-        <Link href="/" className="flex flex-col group shrink-0">
-          <span className="text-xl sm:text-2xl font-black tracking-tight text-[#09101D] group-hover:text-[#0066FF] transition-colors">
-            NEXZEN ASSET
-          </span>
-          <span className="text-[10px] sm:text-[11px] font-medium text-slate-400 -mt-0.5 tracking-tight">
-            An evolution of Asset Integrated Info Systems · 25+ Years Legacy
-          </span>
+        <Link href="/" className="flex items-center gap-3 group shrink-0 py-0.5">
+          <img
+            src="/logo.jpg"
+            alt="NexZen Asset Private Limited"
+            className="h-12 sm:h-16 lg:h-20 w-auto object-contain mix-blend-multiply"
+          />
+          <div className="flex flex-col">
+            <span className="text-base sm:text-xl font-black tracking-tight text-[#091F38] group-hover:text-[#C69214] transition-colors leading-tight whitespace-nowrap">
+              NEXZEN
+            </span>
+            <span className="hidden sm:block text-[10px] sm:text-[11.5px] font-extrabold text-[#C69214] tracking-wider uppercase">
+              ASSET PRIVATE LIMITED
+            </span>
+          </div>
         </Link>
 
         {/* Desktop Navigation Links */}
@@ -61,20 +68,20 @@ export default function Navbar({ onOpenEnquireModal }: NavbarProps) {
         </nav>
 
         {/* Enquire Now CTA & Mobile Hamburger */}
-        <div className="flex items-center space-x-3 shrink-0">
+        <div className="flex items-center space-x-2 sm:space-x-3 shrink-0">
           <button
             onClick={onOpenEnquireModal}
-            className="btn-gradient text-white text-[12.5px] font-bold px-5 py-2.5 rounded-full shadow-md shadow-blue-500/20 hover:shadow-blue-500/35 transition-all duration-300 transform active:scale-95 whitespace-nowrap"
+            className="hidden sm:flex btn-gradient text-white text-xs sm:text-[12.5px] font-bold px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-full shadow-md shadow-blue-500/20 hover:shadow-blue-500/35 transition-all duration-300 transform active:scale-95 whitespace-nowrap"
           >
             Enquire Now
           </button>
 
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="xl:hidden p-1.5 text-slate-700 hover:text-[#0066FF]"
+            className="xl:hidden p-1 text-[#09101D] hover:text-[#0066FF] focus:outline-none shrink-0"
             aria-label="Toggle Navigation"
           >
-            {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {mobileMenuOpen ? <X className="w-7 h-7 stroke-[2.5]" /> : <Menu className="w-7 h-7 stroke-[2.5]" />}
           </button>
         </div>
 
@@ -82,19 +89,30 @@ export default function Navbar({ onOpenEnquireModal }: NavbarProps) {
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="xl:hidden bg-white border-b border-slate-200 px-4 py-4 space-y-2 shadow-lg">
+        <div className="xl:hidden bg-white border-b border-slate-200 px-4 py-4 space-y-2 shadow-xl max-h-[calc(100vh-4rem)] overflow-y-auto">
           {navLinks.map((link) => (
             <Link
               key={link.label}
               href={link.href}
               onClick={() => setMobileMenuOpen(false)}
-              className={`block px-3 py-2 rounded-lg text-xs font-bold ${
+              className={`block px-3.5 py-2.5 rounded-xl text-xs font-bold transition-colors ${
                 pathname === link.href ? "text-[#0066FF] bg-blue-50" : "text-slate-700 hover:bg-slate-50"
               }`}
             >
               {link.label}
             </Link>
           ))}
+          <div className="pt-2 border-t border-slate-100">
+            <button
+              onClick={() => {
+                setMobileMenuOpen(false);
+                onOpenEnquireModal();
+              }}
+              className="w-full btn-gradient text-white text-xs font-bold py-3 rounded-xl shadow-md shadow-blue-500/20 text-center"
+            >
+              Enquire Now
+            </button>
+          </div>
         </div>
       )}
     </header>

@@ -105,14 +105,14 @@ export default function CertificationsPageSection({ onOpenEnquireModal }: Certif
             </div>
 
             {/* 4 Columns Grid of Certification Skill Pills */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 pt-1">
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2 sm:gap-2.5 pt-1">
               {filteredCerts.map((cert) => (
                 <motion.div
                   key={cert.title}
                   whileHover={{ scale: 1.03 }}
                   whileTap={{ scale: 0.97 }}
                   onClick={() => setSelectedCert(cert)}
-                  className="bg-white hover:bg-blue-50/70 border border-slate-200/80 hover:border-blue-300 px-3.5 py-2.5 rounded-2xl text-xs font-bold text-[#09101D] hover:text-[#0066FF] transition-all cursor-pointer shadow-2xs text-center truncate"
+                  className="bg-white hover:bg-blue-50/70 border border-slate-200/80 hover:border-blue-300 px-3 sm:px-3.5 py-2 sm:py-2.5 rounded-2xl text-xs font-bold text-[#09101D] hover:text-[#0066FF] transition-all cursor-pointer shadow-2xs text-center truncate"
                   title={cert.title}
                 >
                   {cert.title}
@@ -128,7 +128,7 @@ export default function CertificationsPageSection({ onOpenEnquireModal }: Certif
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
           
           {/* Left Visual Ice Glass Box */}
-          <div className="lg:col-span-6 bg-gradient-to-br from-[#DDEBFC] via-[#E4F4FA] to-[#E2F7F6] rounded-3xl p-8 border border-blue-100/70 shadow-xs flex flex-col justify-between relative overflow-hidden min-h-[200px]">
+          <div className="lg:col-span-6 bg-gradient-to-br from-[#DDEBFC] via-[#E4F4FA] to-[#E2F7F6] rounded-3xl p-6 sm:p-8 border border-blue-100/70 shadow-xs flex flex-col justify-between relative overflow-hidden min-h-[180px] sm:min-h-[200px]">
             <div className="absolute -top-10 -right-10 w-60 h-60 bg-cyan-300/30 rounded-full blur-3xl pointer-events-none" />
             <div className="my-auto z-10 space-y-2">
               <span className="inline-block px-3 py-1 rounded-full text-xs font-extrabold bg-white/80 backdrop-blur-sm text-[#0066FF]">
@@ -154,7 +154,7 @@ export default function CertificationsPageSection({ onOpenEnquireModal }: Certif
             <div className="pt-2 flex items-center gap-3">
               <button
                 onClick={onOpenEnquireModal}
-                className="btn-gradient text-white text-xs sm:text-sm font-bold px-6 py-3 rounded-full flex items-center gap-1.5"
+                className="btn-gradient text-white text-xs sm:text-sm font-bold px-6 py-3 rounded-full flex items-center gap-1.5 w-full sm:w-auto justify-center"
               >
                 <span>Enquire for Certifications</span>
                 <ChevronRight className="w-4 h-4" />
@@ -169,12 +169,12 @@ export default function CertificationsPageSection({ onOpenEnquireModal }: Certif
       {/* Certification Detail Modal */}
       <AnimatePresence>
         {selectedCert && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-md">
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-slate-900/60 backdrop-blur-md">
             <motion.div
               initial={{ opacity: 0, scale: 0.95, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 20 }}
-              className="bg-white rounded-3xl max-w-lg w-full p-6 sm:p-8 shadow-2xl border border-slate-100 relative overflow-hidden"
+              className="bg-white rounded-3xl max-w-lg w-full p-5 sm:p-8 shadow-2xl border border-slate-100 relative overflow-hidden max-h-[90vh] overflow-y-auto"
             >
               <button
                 onClick={() => setSelectedCert(null)}

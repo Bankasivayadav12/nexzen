@@ -5,6 +5,10 @@ import Navbar from "@/components/layout/Navbar";
 import HeroSection from "@/components/hero/HeroSection";
 import FiveDoorsSection from "@/components/sections/FiveDoorsSection";
 import UpcomingBatchesSection from "@/components/sections/UpcomingBatchesSection";
+import CareerGuidanceSection from "@/components/sections/CareerGuidanceSection";
+import JobsPageSection from "@/components/sections/JobsPageSection";
+import HiringPartnersSection from "@/components/sections/HiringPartnersSection";
+import PhaseArchitectureSection from "@/components/sections/PhaseArchitectureSection";
 import Footer from "@/components/layout/Footer";
 import EnquireModal from "@/components/ui/EnquireModal";
 
@@ -24,8 +28,18 @@ export default function Home() {
         {/* 2. Five Doors Interactive Section */}
         <FiveDoorsSection onOpenEnquireModal={() => setIsEnquireModalOpen(true)} />
 
-        {/* 3. Upcoming Batches Section */}
+        {/* 3. Career Guidance Section */}
+        <CareerGuidanceSection onOpenEnquireModal={() => setIsEnquireModalOpen(true)} />
+
+        {/* 4. Upcoming Batches Section */}
         <UpcomingBatchesSection onOpenEnquireModal={() => setIsEnquireModalOpen(true)} />
+
+   
+        {/* 6. Hiring Partners Section */}
+        <HiringPartnersSection onOpenEnquireModal={() => setIsEnquireModalOpen(true)} />
+
+        {/* 7. Phase 1 vs Future Architecture Section */}
+        <PhaseArchitectureSection />
       </main>
 
       {/* Footer */}

@@ -57,12 +57,12 @@ export default function HeroVisual() {
   const [activeCert, setActiveCert] = useState<string | null>(null);
 
   const bars = [
-    { height: 40, targetHeight: "40px", color: "#0052FF", title: "Q1: 85%" },
-    { height: 48, targetHeight: "48px", color: "#00C6FF", title: "Q2: 95%" },
-    { height: 32, targetHeight: "32px", color: "#0052FF", title: "Q3: 70%" },
-    { height: 44, targetHeight: "44px", color: "#00C6FF", title: "Q4: 98%" },
-    { height: 48, targetHeight: "48px", color: "#0052FF", title: "Annual: 90%" },
-    { height: 44, targetHeight: "44px", color: "#00C6FF", title: "Placement: 96%" },
+    { height: 40, targetHeight: "40px", color: "#091F38", title: "Q1: 85%" },
+    { height: 48, targetHeight: "48px", color: "#0066FF", title: "Q2: 95%" },
+    { height: 32, targetHeight: "32px", color: "#C69214", title: "Q3: 70%" },
+    { height: 44, targetHeight: "44px", color: "#0066FF", title: "Q4: 98%" },
+    { height: 48, targetHeight: "48px", color: "#091F38", title: "Annual: 90%" },
+    { height: 44, targetHeight: "44px", color: "#C69214", title: "Placement: 96%" },
   ];
 
   return (
@@ -70,7 +70,7 @@ export default function HeroVisual() {
       initial={{ opacity: 0, scale: 0.96 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
-      className="w-full h-full min-h-[440px] lg:min-h-[480px] bg-gradient-to-br from-[#DDEBFC] via-[#E4F4FA] to-[#E2F7F6] rounded-[28px] p-6 sm:p-8 flex flex-col justify-between relative overflow-hidden border border-blue-100/60 shadow-inner perspective-1000"
+      className="w-full h-full min-h-[360px] sm:min-h-[440px] lg:min-h-[480px] bg-gradient-to-br from-[#DDEBFC] via-[#E4F4FA] to-[#E2F7F6] rounded-[28px] p-4 sm:p-8 flex flex-col justify-between relative overflow-hidden border border-blue-100/60 shadow-inner perspective-1000"
     >
       
       {/* Background Animated Gradient Sphere */}
@@ -88,8 +88,8 @@ export default function HeroVisual() {
       />
 
       {/* Top Floating Tilt Card: Professional Learning Space */}
-      <div className="w-full max-w-[350px] ml-auto z-10">
-        <TiltCard className="bg-white/95 backdrop-blur-md rounded-2xl p-6 shadow-lg shadow-blue-900/10 border border-white/90 hover:shadow-2xl hover:shadow-blue-500/20">
+      <div className="w-full sm:max-w-[350px] sm:ml-auto z-10">
+        <TiltCard className="bg-white/95 backdrop-blur-md rounded-2xl p-4 sm:p-6 shadow-lg shadow-blue-900/10 border border-white/90 hover:shadow-2xl hover:shadow-blue-500/20">
           <h3 className="text-xl sm:text-[22px] font-black text-[#09101D] tracking-tight leading-tight">
             Professional Learning Space
           </h3>
