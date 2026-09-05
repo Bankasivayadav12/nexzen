@@ -10,6 +10,7 @@ interface JobApplyFlowSectionProps {
 
 export default function JobApplyFlowSection({ onOpenEnquireModal }: JobApplyFlowSectionProps) {
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [isSaved, setIsSaved] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
@@ -21,9 +22,24 @@ export default function JobApplyFlowSection({ onOpenEnquireModal }: JobApplyFlow
     jobRef: "NXZ-101",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setLoading(true);
+    try {
+      await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          formType: "Job Application Flow",
+          ...formData,
+        }),
+      });
+    } catch (err) {
+      console.error("Job application error:", err);
+    } finally {
+      setLoading(false);
+      setSubmitted(true);
+    }
   };
 
   return (

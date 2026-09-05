@@ -6,6 +6,7 @@ import { Phone, MapPin, Mail, Clock, Send, CheckCircle2, MessageSquare, External
 
 export default function ContactPageSection() {
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
     fullName: "",
     mobileNumber: "",
@@ -19,9 +20,24 @@ export default function ContactPageSection() {
     consent: true,
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setLoading(true);
+    try {
+      await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          formType: "Contact Us Page Enquiry",
+          ...formData,
+        }),
+      });
+    } catch (err) {
+      console.error("Contact form error:", err);
+    } finally {
+      setLoading(false);
+      setSubmitted(true);
+    }
   };
 
   return (

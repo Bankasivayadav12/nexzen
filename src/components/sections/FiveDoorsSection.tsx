@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, CheckCircle2, ChevronRight, X, Sparkles } from "lucide-react";
 
@@ -15,6 +16,7 @@ interface DoorCard {
   description: string;
   tags: string[];
   buttonText: string;
+  href: string;
   details: {
     overview: string;
     highlights: string[];
@@ -30,6 +32,7 @@ const doorsData: DoorCard[] = [
     description: "Strong foundations for B.Com, M.Com, BBA and MBA learners.",
     tags: ["B.Com", "M.Com", "BBA", "MBA"],
     buttonText: "Explore Academics",
+    href: "/academics",
     details: {
       overview: "Comprehensive academic degree coaching combined with practical financial accounting standards.",
       highlights: [
@@ -48,6 +51,7 @@ const doorsData: DoorCard[] = [
     description: "Prepare for recognised professional qualifications.",
     tags: ["CA", "CMA", "CS", "CPA", "ACCA", "IFRS", "EA"],
     buttonText: "Explore Courses",
+    href: "/courses",
     details: {
       overview: "Rigorous coaching for top national and international charter qualifications.",
       highlights: [
@@ -65,7 +69,8 @@ const doorsData: DoorCard[] = [
     title: "Certifications",
     description: "Build specialised skills and add credentials.",
     tags: ["NISM", "NCFM", "Tally", "Excel", "Power BI"],
-    buttonText: "View All",
+    buttonText: "View All Certifications",
+    href: "/certifications",
     details: {
       overview: "Short-term skill booster certifications for financial software and market analytics.",
       highlights: [
@@ -84,6 +89,7 @@ const doorsData: DoorCard[] = [
     description: "Choose domain, choose role, train with projects.",
     tags: ["Accounting", "Audit", "Tax", "Capital Markets"],
     buttonText: "Explore Roles",
+    href: "/training",
     details: {
       overview: "100% practical simulation job training matching corporate finance job roles.",
       highlights: [
@@ -102,6 +108,7 @@ const doorsData: DoorCard[] = [
     description: "Consultation and training solutions for businesses and institutions.",
     tags: ["Advisory", "Corporate Training", "College Partnerships"],
     buttonText: "Talk to Team",
+    href: "/solutions",
     details: {
       overview: "B2B workforce development, corporate finance training, and university MOU tie-ups.",
       highlights: [
@@ -141,9 +148,8 @@ export default function FiveDoorsSection({ onOpenEnquireModal }: FiveDoorsSectio
               whileHover={{ y: -6, boxShadow: "0 20px 30px -10px rgba(0, 102, 255, 0.12)" }}
               transition={{ duration: 0.25 }}
               className="bg-white rounded-3xl p-6 border border-slate-200/80 shadow-xs flex flex-col justify-between h-full hover:border-blue-300 transition-colors group cursor-pointer"
-              onClick={() => setSelectedDoor(door)}
             >
-              <div>
+              <div onClick={() => setSelectedDoor(door)}>
                 {/* Large Background Faint Letter */}
                 <div className="text-3xl font-light text-slate-400/70 mb-1">
                   {door.letter}
@@ -185,16 +191,14 @@ export default function FiveDoorsSection({ onOpenEnquireModal }: FiveDoorsSectio
                 </div>
               </div>
 
-              {/* Action Button */}
-              <button
-                onClick={(e) => {
-                  e.stopPropagation();
-                  setSelectedDoor(door);
-                }}
-                className="w-full btn-gradient text-white text-[12px] font-bold py-2.5 px-4 rounded-full shadow-md shadow-blue-500/20 hover:shadow-blue-500/35 transition-all duration-200 flex items-center justify-center gap-1 mt-2"
+              {/* Action Button - Direct Navigation Link */}
+              <Link
+                href={door.href}
+                className="w-full btn-gradient text-white text-[12px] font-bold py-2.5 px-4 rounded-full shadow-md shadow-blue-500/20 hover:shadow-blue-500/35 transition-all duration-200 flex items-center justify-center gap-1.5 mt-2 group-hover:scale-[1.02]"
               >
                 <span>{door.buttonText}</span>
-              </button>
+                <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
+              </Link>
             </motion.div>
           ))}
         </div>

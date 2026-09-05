@@ -10,6 +10,7 @@ interface EnquireModalProps {
 
 export default function EnquireModal({ isOpen, onClose }: EnquireModalProps) {
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -20,12 +21,24 @@ export default function EnquireModal({ isOpen, onClose }: EnquireModalProps) {
 
   if (!isOpen) return null;
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
-    setTimeout(() => {
-      // Auto close after 3 seconds
-    }, 3000);
+    setLoading(true);
+    try {
+      await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          formType: "Counselling Enquiry Modal",
+          ...formData,
+        }),
+      });
+    } catch (err) {
+      console.error("Form submission error:", err);
+    } finally {
+      setLoading(false);
+      setSubmitted(true);
+    }
   };
 
   const handleReset = () => {
@@ -167,10 +180,11 @@ export default function EnquireModal({ isOpen, onClose }: EnquireModalProps) {
 
               <button
                 type="submit"
-                className="w-full btn-gradient text-white font-bold text-sm py-3.5 rounded-xl flex items-center justify-center gap-2 shadow-lg shadow-blue-500/25 mt-2"
+                disabled={loading}
+                className="w-full btn-gradient text-white font-bold text-sm py-3.5 rounded-xl flex items-center justify-center gap-2 shadow-lg shadow-blue-500/25 mt-2 disabled:opacity-60"
               >
                 <Send className="w-4 h-4" />
-                <span>Submit Enquiry</span>
+                <span>{loading ? "Submitting..." : "Submit Enquiry"}</span>
               </button>
             </form>
           </div>

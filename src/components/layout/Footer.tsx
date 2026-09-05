@@ -18,17 +18,24 @@ export default function Footer({ onOpenEnquireModal }: FooterProps) {
           
           {/* Brand Info */}
           <div className="lg:col-span-2 space-y-4">
-            <div className="flex items-center gap-3.5">
-              <img
-                src="/logo.jpg"
-                alt="NexZen Asset Private Limited"
-                className="h-16 sm:h-20 lg:h-24 w-auto object-contain rounded-xl bg-white p-1.5 shadow-md"
-              />
+            <div className="flex items-center gap-3.5 sm:gap-4">
+              <div className="bg-white rounded-2xl p-2 sm:p-2.5 shadow-xl ring-1 ring-white/10 shrink-0 flex items-center justify-center">
+                <img
+                  src="/logo.png"
+                  alt="NexZen Asset Private Limited"
+                  className="h-11 sm:h-13 lg:h-15 w-auto object-contain"
+                />
+              </div>
               <div className="flex flex-col">
-                <span className="text-2xl sm:text-3xl font-black text-white tracking-tight">
-                  NEXZEN <span className="text-[#C69214]">ASSET</span>
-                </span>
-                <span className="text-xs text-[#C69214] font-bold tracking-wide mt-0.5">
+                <div className="flex items-center gap-2 leading-none">
+                  <span className="text-xl sm:text-2xl lg:text-3xl font-black text-white tracking-wider uppercase">
+                    NEXZEN
+                  </span>
+                  <span className="text-xl sm:text-2xl lg:text-3xl font-black text-[#C69214] tracking-wider uppercase">
+                    ASSET
+                  </span>
+                </div>
+                <span className="text-xs text-[#C69214] font-bold tracking-wide mt-1.5">
                   An evolution of Asset Integrated Info Systems · 25+ Years Legacy
                 </span>
               </div>
