@@ -19,8 +19,8 @@ export default function HeroSection({ onOpenEnquireModal }: HeroSectionProps) {
             <HeroContent onOpenEnquireModal={onOpenEnquireModal} />
           </div>
 
-          {/* Right Column: Interactive Professional Learning Space */}
-          <div className="hidden lg:flex lg:col-span-6">
+          {/* Right Column: Hero Visual Image Card */}
+          <div className="flex lg:col-span-6">
             <HeroVisual />
           </div>
 
@@ -29,3 +29,6 @@ export default function HeroSection({ onOpenEnquireModal }: HeroSectionProps) {
     </section>
   );
 }
+
+
+

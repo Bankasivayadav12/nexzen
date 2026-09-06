@@ -29,7 +29,7 @@ export default function Home() {
         <FiveDoorsSection onOpenEnquireModal={() => setIsEnquireModalOpen(true)} />
 
         {/* 3. Career Guidance Section */}
-        <CareerGuidanceSection onOpenEnquireModal={() => setIsEnquireModalOpen(true)} />
+        {/* <CareerGuidanceSection onOpenEnquireModal={() => setIsEnquireModalOpen(true)} /> */}
 
         {/* 4. Upcoming Batches Section */}
         <UpcomingBatchesSection onOpenEnquireModal={() => setIsEnquireModalOpen(true)} />
@@ -39,7 +39,7 @@ export default function Home() {
         <HiringPartnersSection onOpenEnquireModal={() => setIsEnquireModalOpen(true)} />
 
         {/* 7. Phase 1 vs Future Architecture Section */}
-        <PhaseArchitectureSection />
+        {/* <PhaseArchitectureSection /> */}
       </main>
 
       {/* Footer */}
