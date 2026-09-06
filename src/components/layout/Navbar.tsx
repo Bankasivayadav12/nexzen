@@ -4,7 +4,8 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Sparkles, PhoneCall, ChevronDown, GradCap, Briefcase, Users, Phone } from "lucide-react";
+import { Menu, X, Sparkles, PhoneCall } from "lucide-react";
+
 
 interface NavbarProps {
   onOpenEnquireModal: () => void;
