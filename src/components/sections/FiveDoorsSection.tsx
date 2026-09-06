@@ -203,14 +203,7 @@ export default function FiveDoorsSection({ onOpenEnquireModal }: FiveDoorsSectio
           ))}
         </div>
 
-        {/* Developer Behaviour Banner Note */}
-        <div className="mt-8 bg-[#FDF3C4]/90 border border-[#F6E05E] rounded-2xl p-4 sm:p-5 shadow-xs flex items-center gap-3">
-          <div className="w-2.5 h-2.5 rounded-full bg-amber-500 shrink-0 animate-ping" />
-          <p className="text-xs sm:text-sm text-[#744210] font-medium leading-normal">
-            <strong className="font-extrabold text-[#522E08]">Developer behaviour:</strong>{" "}
-            each card can open a dedicated landing page; Job-Ready Training should also expand into domain choices on click.
-          </p>
-        </div>
+
 
       </div>
 
