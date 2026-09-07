@@ -56,12 +56,12 @@ const categoriesData: CategoryCard[] = [
     iconBg: "bg-blue-500",
     iconColor: "text-white",
     companies: [
-      { name: "Deloitte", domain: "deloitte.com", logoUrl: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/deloitte.svg" },
-      { name: "EY", domain: "ey.com", logoUrl: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/ey.svg" },
-      { name: "PwC", domain: "pwc.com", logoUrl: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/pwc.svg" },
-      { name: "KPMG", domain: "kpmg.com", logoUrl: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/kpmg.svg" },
-      { name: "BDO", domain: "bdo.global" },
-      { name: "SRBC & CO", domain: "ey.com" },
+      { name: "Deloitte", logoUrl: "https://cdn.simpleicons.org/deloitte/86BC25" },
+      { name: "EY", logoUrl: "https://cdn.simpleicons.org/ey/FFE600" },
+      { name: "PwC", logoUrl: "https://cdn.simpleicons.org/pwc/D04A02" },
+      { name: "KPMG", logoUrl: "https://cdn.simpleicons.org/kpmg/00338D" },
+      { name: "BDO", logoUrl: "https://cdn.simpleicons.org/bdo/E31837" },
+      { name: "SRBC & CO", logoUrl: "https://cdn.simpleicons.org/ey/FFE600" },
     ],
   },
   {
@@ -72,12 +72,12 @@ const categoriesData: CategoryCard[] = [
     iconBg: "bg-amber-500",
     iconColor: "text-white",
     companies: [
-      { name: "McKinsey", domain: "mckinsey.com", logoUrl: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/mckinsey.svg" },
-      { name: "BCG", domain: "bcg.com" },
-      { name: "Bain", domain: "bain.com" },
-      { name: "Accenture", domain: "accenture.com", logoUrl: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/accenture.svg" },
-      { name: "IBM", domain: "ibm.com", logoUrl: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/ibm.svg" },
-      { name: "Capgemini", domain: "capgemini.com", logoUrl: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/capgemini.svg" },
+      { name: "McKinsey", logoUrl: "https://cdn.simpleicons.org/mckinsey/000000" },
+      { name: "BCG", logoUrl: "https://cdn.simpleicons.org/bcg/008000" },
+      { name: "Bain", logoUrl: "https://cdn.simpleicons.org/bainandcompany/CC0000" },
+      { name: "Accenture", logoUrl: "https://cdn.simpleicons.org/accenture/A100FF" },
+      { name: "IBM", logoUrl: "https://cdn.simpleicons.org/ibm/054ADA" },
+      { name: "Capgemini", logoUrl: "https://cdn.simpleicons.org/capgemini/0070AD" },
     ],
   },
   {
@@ -88,11 +88,11 @@ const categoriesData: CategoryCard[] = [
     iconBg: "bg-emerald-500",
     iconColor: "text-white",
     companies: [
-      { name: "Grant Thornton", domain: "grantthornton.global" },
-      { name: "RSM", domain: "rsm.global" },
-      { name: "Crowe", domain: "crowe.com" },
-      { name: "Baker Tilly", domain: "bakertilly.com" },
-      { name: "Forvis", domain: "forvis.com" },
+      { name: "Grant Thornton", logoUrl: "https://cdn.simpleicons.org/grantthornton/4F2683" },
+      { name: "RSM", logoUrl: "https://cdn.simpleicons.org/rsm/009933" },
+      { name: "Crowe", logoUrl: "https://cdn.simpleicons.org/crowe/002F6C" },
+      { name: "Baker Tilly", logoUrl: "https://cdn.simpleicons.org/bakertilly/E31837" },
+      { name: "Forvis", logoUrl: "https://cdn.simpleicons.org/mazars/002D62" },
     ],
   },
   {
@@ -103,11 +103,11 @@ const categoriesData: CategoryCard[] = [
     iconBg: "bg-rose-500",
     iconColor: "text-white",
     companies: [
-      { name: "AZB & Partners", domain: "azbpartners.com" },
-      { name: "Trilegal", domain: "trilegal.com" },
-      { name: "Khaitan & Co", domain: "khaitanco.com" },
-      { name: "Shardul Amarchand", domain: "amarchand.com" },
-      { name: "Luthra and Luthra", domain: "luthra.com" },
+      { name: "AZB & Partners" },
+      { name: "Trilegal" },
+      { name: "Khaitan & Co" },
+      { name: "Shardul Amarchand" },
+      { name: "Luthra and Luthra" },
     ],
   },
   {
@@ -118,11 +118,11 @@ const categoriesData: CategoryCard[] = [
     iconBg: "bg-cyan-500",
     iconColor: "text-white",
     companies: [
-      { name: "Google", domain: "google.com", logoUrl: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/google.svg" },
-      { name: "Microsoft", domain: "microsoft.com", logoUrl: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/microsoft.svg" },
-      { name: "Amazon", domain: "amazon.com", logoUrl: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/amazon.svg" },
-      { name: "IBM", domain: "ibm.com", logoUrl: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/ibm.svg" },
-      { name: "Intel", domain: "intel.com", logoUrl: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/intel.svg" },
+      { name: "Google", logoUrl: "https://cdn.simpleicons.org/google/4285F4" },
+      { name: "Microsoft", logoUrl: "https://cdn.simpleicons.org/microsoft/5E5E5E" },
+      { name: "Amazon", logoUrl: "https://cdn.simpleicons.org/amazon/FF9900" },
+      { name: "IBM", logoUrl: "https://cdn.simpleicons.org/ibm/054ADA" },
+      { name: "Intel", logoUrl: "https://cdn.simpleicons.org/intel/0071C5" },
     ],
   },
   {
@@ -133,12 +133,12 @@ const categoriesData: CategoryCard[] = [
     iconBg: "bg-purple-500",
     iconColor: "text-white",
     companies: [
-      { name: "TATA", domain: "tata.com", logoUrl: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/tata.svg" },
-      { name: "Reliance", domain: "ril.com" },
-      { name: "HDFC Bank", domain: "hdfcbank.com" },
-      { name: "Infosys", domain: "infosys.com", logoUrl: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/infosys.svg" },
-      { name: "Wipro", domain: "wipro.com", logoUrl: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/wipro.svg" },
-      { name: "Tech Mahindra", domain: "techmahindra.com" },
+      { name: "TATA", logoUrl: "https://cdn.simpleicons.org/tata/00529C" },
+      { name: "Reliance", logoUrl: "https://cdn.simpleicons.org/relianceindustrieslimited/003399" },
+      { name: "HDFC Bank", logoUrl: "https://cdn.simpleicons.org/hdfcbank/004B8D" },
+      { name: "Infosys", logoUrl: "https://cdn.simpleicons.org/infosys/007CC3" },
+      { name: "Wipro", logoUrl: "https://cdn.simpleicons.org/wipro/121A63" },
+      { name: "Tech Mahindra" },
     ],
   },
   {
@@ -149,11 +149,11 @@ const categoriesData: CategoryCard[] = [
     iconBg: "bg-[#0066FF]",
     iconColor: "text-white",
     companies: [
-      { name: "SBI", domain: "sbi.co.in" },
-      { name: "SEBI", domain: "sebi.gov.in" },
-      { name: "UPSC", domain: "upsc.gov.in" },
-      { name: "RBI", domain: "rbi.org.in" },
-      { name: "NITI Aayog", domain: "niti.gov.in" },
+      { name: "SBI", logoUrl: "https://cdn.simpleicons.org/statebankofindia/0082C6" },
+      { name: "SEBI" },
+      { name: "UPSC" },
+      { name: "RBI" },
+      { name: "NITI Aayog" },
     ],
   },
   {
@@ -164,12 +164,12 @@ const categoriesData: CategoryCard[] = [
     iconBg: "bg-amber-500",
     iconColor: "text-white",
     companies: [
-      { name: "Razorpay", domain: "razorpay.com", logoUrl: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/razorpay.svg" },
-      { name: "Zomato", domain: "zomato.com", logoUrl: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/zomato.svg" },
-      { name: "Zerodha", domain: "zerodha.com" },
-      { name: "CRED", domain: "cred.club" },
-      { name: "Meesho", domain: "meesho.com" },
-      { name: "Swiggy", domain: "swiggy.com", logoUrl: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/swiggy.svg" },
+      { name: "Razorpay", logoUrl: "https://cdn.simpleicons.org/razorpay/0C2340" },
+      { name: "Zomato", logoUrl: "https://cdn.simpleicons.org/zomato/E23744" },
+      { name: "Zerodha" },
+      { name: "CRED", logoUrl: "https://cdn.simpleicons.org/cred/000000" },
+      { name: "Meesho" },
+      { name: "Swiggy", logoUrl: "https://cdn.simpleicons.org/swiggy/FC8019" },
     ],
   },
   {
@@ -180,12 +180,12 @@ const categoriesData: CategoryCard[] = [
     iconBg: "bg-indigo-500",
     iconColor: "text-white",
     companies: [
-      { name: "ACCA", domain: "accaglobal.com" },
-      { name: "CFA Institute", domain: "cfainstitute.org" },
-      { name: "CMA", domain: "imanet.org" },
-      { name: "Dubai Careers", domain: "dubaicareers.ae" },
-      { name: "PwC", domain: "pwc.com", logoUrl: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/pwc.svg" },
-      { name: "EY", domain: "ey.com", logoUrl: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/ey.svg" },
+      { name: "ACCA" },
+      { name: "CFA Institute" },
+      { name: "CMA" },
+      { name: "Dubai Careers" },
+      { name: "PwC", logoUrl: "https://cdn.simpleicons.org/pwc/D04A02" },
+      { name: "EY", logoUrl: "https://cdn.simpleicons.org/ey/FFE600" },
     ],
   },
   {
@@ -196,12 +196,12 @@ const categoriesData: CategoryCard[] = [
     iconBg: "bg-blue-600",
     iconColor: "text-white",
     companies: [
-      { name: "World Bank", domain: "worldbank.org" },
-      { name: "United Nations", domain: "un.org" },
-      { name: "UNICEF", domain: "unicef.org", logoUrl: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/unicef.svg" },
+      { name: "World Bank", logoUrl: "https://cdn.simpleicons.org/worldbank/002244" },
+      { name: "United Nations", logoUrl: "https://cdn.simpleicons.org/unitednations/009EDB" },
+      { name: "UNICEF", logoUrl: "https://cdn.simpleicons.org/unicef/1C9AD6" },
       { name: "NGO", style: "font-black text-emerald-700 text-xs" },
-      { name: "WHO", domain: "who.int" },
-      { name: "GIZ", domain: "giz.de" },
+      { name: "WHO", logoUrl: "https://cdn.simpleicons.org/worldhealthorganization/008DC9" },
+      { name: "GIZ" },
     ],
   },
   {
@@ -212,12 +212,12 @@ const categoriesData: CategoryCard[] = [
     iconBg: "bg-emerald-600",
     iconColor: "text-white",
     companies: [
-      { name: "HDFC Bank", domain: "hdfcbank.com" },
-      { name: "ICICI Bank", domain: "icicibank.com" },
-      { name: "Axis Bank", domain: "axisbank.com" },
-      { name: "Kotak", domain: "kotak.com" },
-      { name: "J.P. Morgan", domain: "jpmorgan.com" },
-      { name: "Goldman Sachs", domain: "goldmansachs.com" },
+      { name: "HDFC Bank", logoUrl: "https://cdn.simpleicons.org/hdfcbank/004B8D" },
+      { name: "ICICI Bank", logoUrl: "https://cdn.simpleicons.org/icicibank/004B8D" },
+      { name: "Axis Bank", logoUrl: "https://cdn.simpleicons.org/axisbank/97144D" },
+      { name: "Kotak" },
+      { name: "J.P. Morgan", logoUrl: "https://cdn.simpleicons.org/jpmorgan/000000" },
+      { name: "Goldman Sachs", logoUrl: "https://cdn.simpleicons.org/goldmansachs/7399C6" },
     ],
   },
   {
@@ -244,36 +244,26 @@ const manyMoreSectors = [
 ];
 
 function CompanyLogoItem({ comp }: { comp: CompanyItem }) {
-  const [imgStage, setImgStage] = useState<"primary" | "secondary" | "fallback">("primary");
-
-  const primaryUrl = comp.logoUrl || (comp.domain ? `https://logo.clearbit.com/${comp.domain}` : null);
-  const secondaryUrl = comp.domain ? `https://www.google.com/s2/favicons?domain=${comp.domain}&sz=128` : null;
+  const [hasError, setHasError] = useState(false);
 
   return (
-    <div className="w-full py-2 px-1.5 rounded-xl bg-slate-50/80 hover:bg-white border border-slate-100 flex items-center justify-center text-center transition-all hover:shadow-xs min-h-[46px] group">
-      {imgStage === "primary" && primaryUrl ? (
+    <div className="w-full py-2 px-1.5 rounded-xl bg-slate-50/90 hover:bg-white border border-slate-100 hover:border-blue-200 flex items-center justify-center text-center transition-all hover:shadow-xs min-h-[44px] group overflow-hidden">
+      {!hasError && comp.logoUrl ? (
         <img
-          src={primaryUrl}
+          src={comp.logoUrl}
           alt={comp.name}
-          onError={() => setImgStage("secondary")}
+          onError={() => setHasError(true)}
           className="max-h-6 max-w-[85%] object-contain filter group-hover:scale-105 transition-transform"
         />
-      ) : imgStage === "secondary" && secondaryUrl ? (
-        <div className="flex items-center gap-1.5 px-1">
-          <img
-            src={secondaryUrl}
-            alt={comp.name}
-            onError={() => setImgStage("fallback")}
-            className="w-4 h-4 object-contain rounded-xs shrink-0"
-          />
-          <span className={comp.style || "font-bold text-[11px] text-slate-800"}>
+      ) : (
+        <div className="flex items-center justify-center gap-1.5 w-full">
+          <div className="w-5 h-5 rounded-md bg-[#091F38] text-[#C69214] font-black text-[9px] flex items-center justify-center shrink-0 uppercase tracking-tighter shadow-2xs">
+            {comp.name.replace(/[^a-zA-Z]/g, '').slice(0, 2)}
+          </div>
+          <span className={comp.style || "font-extrabold text-[11px] text-[#091F38] tracking-tight truncate max-w-[80px]"}>
             {comp.name}
           </span>
         </div>
-      ) : (
-        <span className={comp.style || "font-bold text-xs text-slate-800"}>
-          {comp.name}
-        </span>
       )}
     </div>
   );
@@ -285,7 +275,7 @@ export default function HiringPartnersSection({ onOpenEnquireModal }: HiringPart
       
       <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-12 relative z-10">
         
-        {/* Top Header Badge & Main Title matching screenshot */}
+        {/* Top Header Badge & Main Title */}
         <div className="text-center max-w-3xl mx-auto mb-8 space-y-2.5">
           <span className="inline-block px-4 py-1.5 rounded-full text-xs font-black bg-[#EBF3FF] text-[#0066FF] tracking-[0.18em] uppercase border border-blue-200/60 shadow-xs">
             YOUR CAREER. OUR PURPOSE.
@@ -373,7 +363,7 @@ export default function HiringPartnersSection({ onOpenEnquireModal }: HiringPart
           </button>
         </div>
 
-        {/* Bottom Slogan Bar matching screenshot */}
+        {/* Bottom Slogan Bar */}
         <div className="pt-4 border-t border-slate-200/60 flex flex-wrap items-center justify-center gap-6 sm:gap-12 text-[11px] font-black uppercase tracking-[0.16em] text-slate-600">
           <div className="flex items-center gap-2 text-[#0066FF]">
             <span className="w-2.5 h-2.5 rounded-full bg-[#0066FF] inline-block animate-pulse"></span>
