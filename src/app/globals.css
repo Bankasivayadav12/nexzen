@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Dancing+Script:wght@700&display=swap');
 @import "tailwindcss";
 
 :root {
@@ -62,12 +63,14 @@ body {
 
 .text-gradient {
   background: linear-gradient(135deg, #091F38 0%, #0066FF 40%, #C69214 100%);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .text-gradient-gold {
   background: linear-gradient(135deg, #D4A017 0%, #C69214 100%);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }

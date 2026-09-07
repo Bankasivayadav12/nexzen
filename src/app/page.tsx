@@ -16,7 +16,7 @@ export default function Home() {
   const [isEnquireModalOpen, setIsEnquireModalOpen] = useState(false);
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#F4F7FB] selection:bg-[#0066FF] selection:text-white">
+    <div className="min-h-screen flex flex-col bg-[#F2F7FE] selection:bg-[#0066FF] selection:text-white">
       {/* Top Navbar */}
       <Navbar onOpenEnquireModal={() => setIsEnquireModalOpen(true)} />
 
@@ -31,9 +31,7 @@ export default function Home() {
         {/* 3. Career Guidance Section */}
         {/* <CareerGuidanceSection onOpenEnquireModal={() => setIsEnquireModalOpen(true)} /> */}
 
-        {/* 4. Upcoming Batches Section */}
-        <UpcomingBatchesSection onOpenEnquireModal={() => setIsEnquireModalOpen(true)} />
-
+       
    
         {/* 6. Hiring Partners Section */}
         <HiringPartnersSection onOpenEnquireModal={() => setIsEnquireModalOpen(true)} />
