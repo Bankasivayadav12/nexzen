@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 import { 
   Building2, 
@@ -31,8 +31,6 @@ interface HiringPartnersSectionProps {
 
 interface CompanyItem {
   name: string;
-  domain?: string;
-  logoUrl?: string;
   style?: string;
 }
 
@@ -47,6 +45,96 @@ interface CategoryCard {
   isManyMore?: boolean;
 }
 
+interface CompanyBrandData {
+  name: string;
+  short: string;
+  bg: string;
+  textColor: string;
+  brandText?: string;
+}
+
+// Authentic corporate brand mapping for 100% reliable rendering without broken image links
+const brandMap: Record<string, CompanyBrandData> = {
+  // CA Firms
+  "Deloitte": { name: "Deloitte", short: "D.", bg: "bg-[#86BC25]", textColor: "text-white font-black", brandText: "Deloitte" },
+  "EY": { name: "EY", short: "EY", bg: "bg-[#FFE600]", textColor: "text-black font-black", brandText: "EY" },
+  "PwC": { name: "PwC", short: "pwc", bg: "bg-[#D04A02]", textColor: "text-white font-black", brandText: "PwC" },
+  "KPMG": { name: "KPMG", short: "KPMG", bg: "bg-[#00338D]", textColor: "text-white font-black", brandText: "KPMG" },
+  "BDO": { name: "BDO", short: "BDO", bg: "bg-[#E31837]", textColor: "text-white font-black", brandText: "BDO" },
+  "SRBC & CO": { name: "SRBC & CO", short: "SR", bg: "bg-[#FFE600]", textColor: "text-black font-bold", brandText: "SRBC & CO" },
+
+  // Consulting Firms
+  "McKinsey": { name: "McKinsey", short: "McK", bg: "bg-[#051C2C]", textColor: "text-white font-bold", brandText: "McKinsey" },
+  "BCG": { name: "BCG", short: "BCG", bg: "bg-[#008000]", textColor: "text-white font-black", brandText: "BCG" },
+  "Bain": { name: "Bain", short: "BAIN", bg: "bg-[#CC0000]", textColor: "text-white font-bold", brandText: "Bain & Co" },
+  "Accenture": { name: "Accenture", short: ">", bg: "bg-[#A100FF]", textColor: "text-white font-black", brandText: "accenture" },
+  "IBM": { name: "IBM", short: "IBM", bg: "bg-[#054ADA]", textColor: "text-white font-black", brandText: "IBM" },
+  "Capgemini": { name: "Capgemini", short: "CG", bg: "bg-[#0070AD]", textColor: "text-white font-bold", brandText: "Capgemini" },
+
+  // CPA Firms
+  "Grant Thornton": { name: "Grant Thornton", short: "GT", bg: "bg-[#4F2683]", textColor: "text-white font-bold", brandText: "Grant Thornton" },
+  "RSM": { name: "RSM", short: "RSM", bg: "bg-[#009933]", textColor: "text-white font-black", brandText: "RSM" },
+  "Crowe": { name: "Crowe", short: "CR", bg: "bg-[#002F6C]", textColor: "text-white font-bold", brandText: "Crowe" },
+  "Baker Tilly": { name: "Baker Tilly", short: "BT", bg: "bg-[#E31837]", textColor: "text-white font-bold", brandText: "Baker Tilly" },
+  "Forvis": { name: "Forvis", short: "FM", bg: "bg-[#002D62]", textColor: "text-white font-bold", brandText: "Forvis Mazars" },
+
+  // Legal Firms
+  "AZB & Partners": { name: "AZB & Partners", short: "AZ", bg: "bg-[#091F38]", textColor: "text-[#C69214] font-bold" },
+  "Trilegal": { name: "Trilegal", short: "TR", bg: "bg-[#091F38]", textColor: "text-[#C69214] font-bold" },
+  "Khaitan & Co": { name: "Khaitan & Co", short: "KH", bg: "bg-[#800000]", textColor: "text-white font-bold" },
+  "Shardul Amarchand": { name: "Shardul Amarchand", short: "SA", bg: "bg-[#091F38]", textColor: "text-[#C69214] font-bold" },
+  "Luthra and Luthra": { name: "Luthra and Luthra", short: "LL", bg: "bg-[#091F38]", textColor: "text-[#C69214] font-bold" },
+
+  // MNCs
+  "Google": { name: "Google", short: "G", bg: "bg-[#4285F4]", textColor: "text-white font-black", brandText: "Google" },
+  "Microsoft": { name: "Microsoft", short: "MS", bg: "bg-[#0078D4]", textColor: "text-white font-black", brandText: "Microsoft" },
+  "Amazon": { name: "Amazon", short: "amzn", bg: "bg-[#FF9900]", textColor: "text-black font-black", brandText: "amazon" },
+  "Intel": { name: "Intel", short: "intel", bg: "bg-[#0071C5]", textColor: "text-white font-bold", brandText: "intel" },
+
+  // Large & Medium Companies
+  "TATA": { name: "TATA", short: "TATA", bg: "bg-[#00529C]", textColor: "text-white font-black", brandText: "TATA" },
+  "Reliance": { name: "Reliance", short: "RIL", bg: "bg-[#003399]", textColor: "text-white font-bold", brandText: "Reliance" },
+  "HDFC Bank": { name: "HDFC Bank", short: "HDFC", bg: "bg-[#004B8D]", textColor: "text-white font-bold", brandText: "HDFC Bank" },
+  "Infosys": { name: "Infosys", short: "INFY", bg: "bg-[#007CC3]", textColor: "text-white font-bold", brandText: "Infosys" },
+  "Wipro": { name: "Wipro", short: "WIPRO", bg: "bg-[#121A63]", textColor: "text-white font-bold", brandText: "Wipro" },
+  "Tech Mahindra": { name: "Tech Mahindra", short: "TM", bg: "bg-[#E31837]", textColor: "text-white font-bold", brandText: "Tech M" },
+
+  // Government Sector
+  "SBI": { name: "SBI", short: "SBI", bg: "bg-[#0082C6]", textColor: "text-white font-black", brandText: "SBI" },
+  "SEBI": { name: "SEBI", short: "SEBI", bg: "bg-[#091F38]", textColor: "text-[#C69214] font-bold" },
+  "UPSC": { name: "UPSC", short: "UPSC", bg: "bg-[#091F38]", textColor: "text-[#C69214] font-bold" },
+  "RBI": { name: "RBI", short: "RBI", bg: "bg-[#091F38]", textColor: "text-[#C69214] font-bold" },
+  "NITI Aayog": { name: "NITI Aayog", short: "NITI", bg: "bg-[#091F38]", textColor: "text-[#C69214] font-bold" },
+
+  // Startups
+  "Razorpay": { name: "Razorpay", short: "RZP", bg: "bg-[#0C2340]", textColor: "text-[#0066FF] font-black", brandText: "Razorpay" },
+  "Zomato": { name: "Zomato", short: "zomato", bg: "bg-[#E23744]", textColor: "text-white font-black", brandText: "zomato" },
+  "Zerodha": { name: "Zerodha", short: "Z", bg: "bg-[#387ED1]", textColor: "text-white font-bold", brandText: "Zerodha" },
+  "CRED": { name: "CRED", short: "CRED", bg: "bg-black", textColor: "text-white font-black", brandText: "CRED" },
+  "Meesho": { name: "Meesho", short: "m", bg: "bg-[#F43397]", textColor: "text-white font-black", brandText: "meesho" },
+  "Swiggy": { name: "Swiggy", short: "S", bg: "bg-[#FC8019]", textColor: "text-white font-black", brandText: "Swiggy" },
+
+  // International Opportunities
+  "ACCA": { name: "ACCA", short: "ACCA", bg: "bg-[#000000]", textColor: "text-[#E31837] font-black" },
+  "CFA Institute": { name: "CFA Institute", short: "CFA", bg: "bg-[#091F38]", textColor: "text-[#C69214] font-bold" },
+  "CMA": { name: "CMA", short: "CMA", bg: "bg-[#091F38]", textColor: "text-[#C69214] font-bold" },
+  "Dubai Careers": { name: "Dubai Careers", short: "DXB", bg: "bg-[#007A3D]", textColor: "text-white font-bold" },
+
+  // Non-Profit
+  "World Bank": { name: "World Bank", short: "WB", bg: "bg-[#002244]", textColor: "text-white font-bold", brandText: "World Bank" },
+  "United Nations": { name: "United Nations", short: "UN", bg: "bg-[#009EDB]", textColor: "text-white font-bold", brandText: "United Nations" },
+  "UNICEF": { name: "UNICEF", short: "unicef", bg: "bg-[#1C9AD6]", textColor: "text-white font-bold", brandText: "unicef" },
+  "WHO": { name: "WHO", short: "WHO", bg: "bg-[#008DC9]", textColor: "text-white font-bold", brandText: "WHO" },
+  "GIZ": { name: "GIZ", short: "giz", bg: "bg-[#E31837]", textColor: "text-white font-bold", brandText: "giz" },
+
+  // BFSI
+  "ICICI Bank": { name: "ICICI Bank", short: "ICICI", bg: "bg-[#F37021]", textColor: "text-white font-bold", brandText: "ICICI Bank" },
+  "Axis Bank": { name: "Axis Bank", short: "AXIS", bg: "bg-[#97144D]", textColor: "text-white font-bold", brandText: "Axis Bank" },
+  "Kotak": { name: "Kotak", short: "KOTAK", bg: "bg-[#EE1C25]", textColor: "text-white font-bold", brandText: "Kotak" },
+  "J.P. Morgan": { name: "J.P. Morgan", short: "JPM", bg: "bg-[#111111]", textColor: "text-white font-bold", brandText: "J.P. Morgan" },
+  "Goldman Sachs": { name: "Goldman Sachs", short: "GS", bg: "bg-[#7399C6]", textColor: "text-white font-bold", brandText: "Goldman Sachs" }
+};
+
 const categoriesData: CategoryCard[] = [
   {
     title: "CA Firms",
@@ -56,12 +144,12 @@ const categoriesData: CategoryCard[] = [
     iconBg: "bg-blue-500",
     iconColor: "text-white",
     companies: [
-      { name: "Deloitte", logoUrl: "https://cdn.simpleicons.org/deloitte/86BC25" },
-      { name: "EY", logoUrl: "https://cdn.simpleicons.org/ey/FFE600" },
-      { name: "PwC", logoUrl: "https://cdn.simpleicons.org/pwc/D04A02" },
-      { name: "KPMG", logoUrl: "https://cdn.simpleicons.org/kpmg/00338D" },
-      { name: "BDO", logoUrl: "https://cdn.simpleicons.org/bdo/E31837" },
-      { name: "SRBC & CO", logoUrl: "https://cdn.simpleicons.org/ey/FFE600" },
+      { name: "Deloitte" },
+      { name: "EY" },
+      { name: "PwC" },
+      { name: "KPMG" },
+      { name: "BDO" },
+      { name: "SRBC & CO" },
     ],
   },
   {
@@ -72,12 +160,12 @@ const categoriesData: CategoryCard[] = [
     iconBg: "bg-amber-500",
     iconColor: "text-white",
     companies: [
-      { name: "McKinsey", logoUrl: "https://cdn.simpleicons.org/mckinsey/000000" },
-      { name: "BCG", logoUrl: "https://cdn.simpleicons.org/bcg/008000" },
-      { name: "Bain", logoUrl: "https://cdn.simpleicons.org/bainandcompany/CC0000" },
-      { name: "Accenture", logoUrl: "https://cdn.simpleicons.org/accenture/A100FF" },
-      { name: "IBM", logoUrl: "https://cdn.simpleicons.org/ibm/054ADA" },
-      { name: "Capgemini", logoUrl: "https://cdn.simpleicons.org/capgemini/0070AD" },
+      { name: "McKinsey" },
+      { name: "BCG" },
+      { name: "Bain" },
+      { name: "Accenture" },
+      { name: "IBM" },
+      { name: "Capgemini" },
     ],
   },
   {
@@ -88,11 +176,11 @@ const categoriesData: CategoryCard[] = [
     iconBg: "bg-emerald-500",
     iconColor: "text-white",
     companies: [
-      { name: "Grant Thornton", logoUrl: "https://cdn.simpleicons.org/grantthornton/4F2683" },
-      { name: "RSM", logoUrl: "https://cdn.simpleicons.org/rsm/009933" },
-      { name: "Crowe", logoUrl: "https://cdn.simpleicons.org/crowe/002F6C" },
-      { name: "Baker Tilly", logoUrl: "https://cdn.simpleicons.org/bakertilly/E31837" },
-      { name: "Forvis", logoUrl: "https://cdn.simpleicons.org/mazars/002D62" },
+      { name: "Grant Thornton" },
+      { name: "RSM" },
+      { name: "Crowe" },
+      { name: "Baker Tilly" },
+      { name: "Forvis" },
     ],
   },
   {
@@ -118,11 +206,11 @@ const categoriesData: CategoryCard[] = [
     iconBg: "bg-cyan-500",
     iconColor: "text-white",
     companies: [
-      { name: "Google", logoUrl: "https://cdn.simpleicons.org/google/4285F4" },
-      { name: "Microsoft", logoUrl: "https://cdn.simpleicons.org/microsoft/5E5E5E" },
-      { name: "Amazon", logoUrl: "https://cdn.simpleicons.org/amazon/FF9900" },
-      { name: "IBM", logoUrl: "https://cdn.simpleicons.org/ibm/054ADA" },
-      { name: "Intel", logoUrl: "https://cdn.simpleicons.org/intel/0071C5" },
+      { name: "Google" },
+      { name: "Microsoft" },
+      { name: "Amazon" },
+      { name: "IBM" },
+      { name: "Intel" },
     ],
   },
   {
@@ -133,11 +221,11 @@ const categoriesData: CategoryCard[] = [
     iconBg: "bg-purple-500",
     iconColor: "text-white",
     companies: [
-      { name: "TATA", logoUrl: "https://cdn.simpleicons.org/tata/00529C" },
-      { name: "Reliance", logoUrl: "https://cdn.simpleicons.org/relianceindustrieslimited/003399" },
-      { name: "HDFC Bank", logoUrl: "https://cdn.simpleicons.org/hdfcbank/004B8D" },
-      { name: "Infosys", logoUrl: "https://cdn.simpleicons.org/infosys/007CC3" },
-      { name: "Wipro", logoUrl: "https://cdn.simpleicons.org/wipro/121A63" },
+      { name: "TATA" },
+      { name: "Reliance" },
+      { name: "HDFC Bank" },
+      { name: "Infosys" },
+      { name: "Wipro" },
       { name: "Tech Mahindra" },
     ],
   },
@@ -149,7 +237,7 @@ const categoriesData: CategoryCard[] = [
     iconBg: "bg-[#0066FF]",
     iconColor: "text-white",
     companies: [
-      { name: "SBI", logoUrl: "https://cdn.simpleicons.org/statebankofindia/0082C6" },
+      { name: "SBI" },
       { name: "SEBI" },
       { name: "UPSC" },
       { name: "RBI" },
@@ -164,12 +252,12 @@ const categoriesData: CategoryCard[] = [
     iconBg: "bg-amber-500",
     iconColor: "text-white",
     companies: [
-      { name: "Razorpay", logoUrl: "https://cdn.simpleicons.org/razorpay/0C2340" },
-      { name: "Zomato", logoUrl: "https://cdn.simpleicons.org/zomato/E23744" },
+      { name: "Razorpay" },
+      { name: "Zomato" },
       { name: "Zerodha" },
-      { name: "CRED", logoUrl: "https://cdn.simpleicons.org/cred/000000" },
+      { name: "CRED" },
       { name: "Meesho" },
-      { name: "Swiggy", logoUrl: "https://cdn.simpleicons.org/swiggy/FC8019" },
+      { name: "Swiggy" },
     ],
   },
   {
@@ -184,8 +272,8 @@ const categoriesData: CategoryCard[] = [
       { name: "CFA Institute" },
       { name: "CMA" },
       { name: "Dubai Careers" },
-      { name: "PwC", logoUrl: "https://cdn.simpleicons.org/pwc/D04A02" },
-      { name: "EY", logoUrl: "https://cdn.simpleicons.org/ey/FFE600" },
+      { name: "PwC" },
+      { name: "EY" },
     ],
   },
   {
@@ -196,11 +284,11 @@ const categoriesData: CategoryCard[] = [
     iconBg: "bg-blue-600",
     iconColor: "text-white",
     companies: [
-      { name: "World Bank", logoUrl: "https://cdn.simpleicons.org/worldbank/002244" },
-      { name: "United Nations", logoUrl: "https://cdn.simpleicons.org/unitednations/009EDB" },
-      { name: "UNICEF", logoUrl: "https://cdn.simpleicons.org/unicef/1C9AD6" },
+      { name: "World Bank" },
+      { name: "United Nations" },
+      { name: "UNICEF" },
       { name: "NGO", style: "font-black text-emerald-700 text-xs" },
-      { name: "WHO", logoUrl: "https://cdn.simpleicons.org/worldhealthorganization/008DC9" },
+      { name: "WHO" },
       { name: "GIZ" },
     ],
   },
@@ -212,12 +300,12 @@ const categoriesData: CategoryCard[] = [
     iconBg: "bg-emerald-600",
     iconColor: "text-white",
     companies: [
-      { name: "HDFC Bank", logoUrl: "https://cdn.simpleicons.org/hdfcbank/004B8D" },
-      { name: "ICICI Bank", logoUrl: "https://cdn.simpleicons.org/icicibank/004B8D" },
-      { name: "Axis Bank", logoUrl: "https://cdn.simpleicons.org/axisbank/97144D" },
+      { name: "HDFC Bank" },
+      { name: "ICICI Bank" },
+      { name: "Axis Bank" },
       { name: "Kotak" },
-      { name: "J.P. Morgan", logoUrl: "https://cdn.simpleicons.org/jpmorgan/000000" },
-      { name: "Goldman Sachs", logoUrl: "https://cdn.simpleicons.org/goldmansachs/7399C6" },
+      { name: "J.P. Morgan" },
+      { name: "Goldman Sachs" },
     ],
   },
   {
@@ -244,27 +332,26 @@ const manyMoreSectors = [
 ];
 
 function CompanyLogoItem({ comp }: { comp: CompanyItem }) {
-  const [hasError, setHasError] = useState(false);
+  const info = brandMap[comp.name] || {
+    name: comp.name,
+    short: comp.name.replace(/[^a-zA-Z]/g, '').slice(0, 2).toUpperCase(),
+    bg: "bg-[#091F38]",
+    textColor: "text-[#C69214] font-bold",
+    brandText: comp.name
+  };
 
   return (
-    <div className="w-full py-2 px-1.5 rounded-xl bg-slate-50/90 hover:bg-white border border-slate-100 hover:border-blue-200 flex items-center justify-center text-center transition-all hover:shadow-xs min-h-[44px] group overflow-hidden">
-      {!hasError && comp.logoUrl ? (
-        <img
-          src={comp.logoUrl}
-          alt={comp.name}
-          onError={() => setHasError(true)}
-          className="max-h-6 max-w-[85%] object-contain filter group-hover:scale-105 transition-transform"
-        />
-      ) : (
-        <div className="flex items-center justify-center gap-1.5 w-full">
-          <div className="w-5 h-5 rounded-md bg-[#091F38] text-[#C69214] font-black text-[9px] flex items-center justify-center shrink-0 uppercase tracking-tighter shadow-2xs">
-            {comp.name.replace(/[^a-zA-Z]/g, '').slice(0, 2)}
-          </div>
-          <span className={comp.style || "font-extrabold text-[11px] text-[#091F38] tracking-tight truncate max-w-[80px]"}>
-            {comp.name}
-          </span>
+    <div className="w-full py-2 px-2 rounded-xl bg-slate-50/90 hover:bg-white border border-slate-200/80 hover:border-blue-300 flex items-center justify-center text-center transition-all hover:shadow-xs min-h-[44px] group overflow-hidden">
+      <div className="flex items-center justify-center gap-1.5 w-full">
+        {/* Authentic Brand Emblem Badge (100% local, 0ms load, zero broken icons) */}
+        <div className={`w-5 h-5 rounded-md ${info.bg} ${info.textColor} font-black text-[9px] flex items-center justify-center shrink-0 tracking-tighter shadow-2xs`}>
+          {info.short}
         </div>
-      )}
+        {/* Brand Name Typography */}
+        <span className={comp.style || "font-extrabold text-[11px] text-[#091F38] tracking-tight truncate max-w-[82px]"}>
+          {info.brandText || info.name}
+        </span>
+      </div>
     </div>
   );
 }
