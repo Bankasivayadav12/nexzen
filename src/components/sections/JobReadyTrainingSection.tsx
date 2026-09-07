@@ -155,14 +155,42 @@ const nonDomainsData: DomainData[] = [
   {
     id: "data-analytics",
     name: "Data Analytics & IT Support",
-    description: "Business analytics, SQL database queries, Power BI / Tableau reporting, IT helpdesk, and web development.",
+    description: "Business analytics, SQL database queries, Power BI / Tableau reporting, IT helpdesk, web development, and cloud IT operations.",
     roles: [
       "Data Analyst Trainee",
       "Business Intelligence Analyst",
       "SQL & Python Data Specialist",
+      "Cyber Security Analyst",
+      "AI & ML Specialist Trainee",
       "IT Support Analyst",
       "Web Development Associate",
       "System Administrator Trainee",
+    ],
+  },
+  {
+    id: "cyber-security",
+    name: "Cyber Security",
+    description: "Network security, threat intelligence, SOC monitoring, ethical hacking, vulnerability analysis, and cloud security controls.",
+    roles: [
+      "Cyber Security Analyst",
+      "SOC Analyst (Tier 1)",
+      "Ethical Hacking Specialist",
+      "Information Security Associate",
+      "Cloud Security Analyst",
+      "Vulnerability Assessment Trainee",
+    ],
+  },
+  {
+    id: "artificial-intelligence",
+    name: "Artificial Intelligence",
+    description: "Generative AI, prompt engineering, machine learning algorithms, NLP models, AI automation, and data science workflows.",
+    roles: [
+      "AI / ML Engineer Trainee",
+      "Prompt Engineer & GenAI Specialist",
+      "Machine Learning Analyst",
+      "AI Automation Specialist",
+      "NLP & GenAI Developer",
+      "Data Science Associate",
     ],
   },
   {
@@ -178,6 +206,7 @@ const nonDomainsData: DomainData[] = [
     ],
   },
 ];
+
 
 export default function JobReadyTrainingSection({ onOpenEnquireModal }: JobReadyTrainingSectionProps) {
   const [activeSelection, setActiveSelection] = useState<{ category: "domain" | "nonDomain"; id: string }>({
@@ -208,14 +237,14 @@ export default function JobReadyTrainingSection({ onOpenEnquireModal }: JobReady
         {/* Main Grid Container: 3 Columns Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 items-stretch">
           
-          {/* Left Column: Dark Navy Domains (Core Finance) Selector */}
+          {/* Left Column: Dark Navy Domains (Finance Career Domains) Selector */}
           <div className="lg:col-span-3 bg-[#091F38] text-white rounded-3xl p-5 flex flex-col justify-between shadow-xl space-y-4 border border-slate-800">
             <div>
               <div className="flex items-center justify-between mb-3">
-                <h2 className="text-xl font-black text-white tracking-tight">
-                  Domains
+                <h2 className="text-lg font-black text-white tracking-tight">
+                  Finance Career Domains
                 </h2>
-                <span className="text-[10px] font-bold bg-blue-500/20 text-blue-300 px-2 py-0.5 rounded-full border border-blue-400/20">
+                <span className="text-[10px] font-bold bg-blue-500/20 text-blue-300 px-2 py-0.5 rounded-full border border-blue-400/20 shrink-0">
                   Core Finance
                 </span>
               </div>
@@ -307,17 +336,18 @@ export default function JobReadyTrainingSection({ onOpenEnquireModal }: JobReady
 
           </div>
 
-          {/* Right Column: Dark Navy Non-Domain Roles Selector */}
+          {/* Right Column: Dark Navy Non-Finance Career Domains Selector */}
           <div className="lg:col-span-3 bg-[#091F38] text-white rounded-3xl p-5 flex flex-col justify-between shadow-xl space-y-4 border border-slate-800">
             <div>
               <div className="flex items-center justify-between mb-3">
-                <h2 className="text-xl font-black text-white tracking-tight">
-                  Non-Domain Roles
+                <h2 className="text-lg font-black text-white tracking-tight">
+                  Non-Finance Career Domains
                 </h2>
-                <span className="text-[10px] font-bold bg-amber-500/20 text-amber-300 px-2 py-0.5 rounded-full border border-amber-400/20">
+                <span className="text-[10px] font-bold bg-amber-500/20 text-amber-300 px-2 py-0.5 rounded-full border border-amber-400/20 shrink-0">
                   Allied Careers
                 </span>
               </div>
+
               
               {/* Non-Domain Vertical Buttons */}
               <div className="flex flex-row lg:flex-col overflow-x-auto pb-2 lg:pb-0 gap-2 scrollbar-none">
