@@ -2,21 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
-import { 
-  Home, 
-  Users, 
-  FileText, 
-  ShieldCheck, 
-  Handshake, 
-  GraduationCap, 
-  Award, 
-  TrendingUp, 
-  Briefcase, 
-  MapPin, 
-  Phone, 
-  Mail, 
-  ArrowRight
-} from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 interface FooterProps {
   onOpenEnquireModal: () => void;
@@ -140,32 +126,47 @@ export default function Footer({ onOpenEnquireModal }: FooterProps) {
             </div>
             <ul className="space-y-3 text-xs font-semibold text-slate-300">
               <li>
-                <Link href="/" className="hover:text-white transition-colors flex items-center gap-2.5">
-                  <Home className="w-4 h-4 text-[#E5B22E] shrink-0 fill-[#E5B22E]/10" />
+                <Link href="/" className="hover:text-white transition-colors flex items-center gap-3">
+                  {/* Home Solid Gold Icon */}
+                  <svg className="w-4 h-4 shrink-0 text-[#E5B22E] fill-current" viewBox="0 0 24 24">
+                    <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
+                  </svg>
                   <span>Home</span>
                 </Link>
               </li>
               <li>
-                <Link href="/about" className="hover:text-white transition-colors flex items-center gap-2.5">
-                  <Users className="w-4 h-4 text-[#E5B22E] shrink-0 fill-[#E5B22E]/10" />
+                <Link href="/about" className="hover:text-white transition-colors flex items-center gap-3">
+                  {/* About Us Solid Gold Icon */}
+                  <svg className="w-4 h-4 shrink-0 text-[#E5B22E] fill-current" viewBox="0 0 24 24">
+                    <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
+                  </svg>
                   <span>About Us</span>
                 </Link>
               </li>
               <li>
-                <Link href="/terms" className="hover:text-white transition-colors flex items-center gap-2.5">
-                  <FileText className="w-4 h-4 text-[#E5B22E] shrink-0 fill-[#E5B22E]/10" />
+                <Link href="/terms" className="hover:text-white transition-colors flex items-center gap-3">
+                  {/* Terms & Conditions Solid Gold Icon */}
+                  <svg className="w-4 h-4 shrink-0 text-[#E5B22E] fill-current" viewBox="0 0 24 24">
+                    <path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/>
+                  </svg>
                   <span>Terms & Conditions</span>
                 </Link>
               </li>
               <li>
-                <Link href="/refund-policy" className="hover:text-white transition-colors flex items-center gap-2.5">
-                  <ShieldCheck className="w-4 h-4 text-[#E5B22E] shrink-0 fill-[#E5B22E]/10" />
+                <Link href="/refund-policy" className="hover:text-white transition-colors flex items-center gap-3">
+                  {/* Refund Policy Solid Gold Shield Icon */}
+                  <svg className="w-4 h-4 shrink-0 text-[#E5B22E] fill-current" viewBox="0 0 24 24">
+                    <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/>
+                  </svg>
                   <span>Refund Policy</span>
                 </Link>
               </li>
               <li>
-                <Link href="/job-assistance-policy" className="hover:text-white transition-colors flex items-center gap-2.5">
-                  <Handshake className="w-4 h-4 text-[#E5B22E] shrink-0 fill-[#E5B22E]/10" />
+                <Link href="/job-assistance-policy" className="hover:text-white transition-colors flex items-center gap-3">
+                  {/* Job Assistance Policy Handshake Icon */}
+                  <svg className="w-4 h-4 shrink-0 text-[#E5B22E] fill-current" viewBox="0 0 24 24">
+                    <path d="M21.5 8h-4.3l-2.27-2.27a.996.996 0 0 0-1.41 0L11.75 7.5 9.17 4.92a.996.996 0 0 0-1.41 0L2.5 10.17V19c0 1.1.9 2 2 2h15c1.1 0 2-.9 2-2V9.5c0-.83-.67-1.5-1.5-1.5z"/>
+                  </svg>
                   <span>Job Assistance Policy</span>
                 </Link>
               </li>
@@ -180,28 +181,41 @@ export default function Footer({ onOpenEnquireModal }: FooterProps) {
               </h4>
               <div className="w-6 h-[2px] bg-[#C69214] mt-1 rounded-full"></div>
             </div>
-            <ul className="space-y-3 text-xs font-semibold text-slate-300">
+            <ul className="space-y-3.5 text-xs font-semibold text-slate-300">
               <li>
-                <Link href="/courses" className="hover:text-white transition-colors flex items-center gap-2.5">
-                  <GraduationCap className="w-4 h-4 text-[#E5B22E] shrink-0 fill-[#E5B22E]/10" />
+                <Link href="/courses" className="hover:text-white transition-colors flex items-center gap-3">
+                  {/* Professional Courses - Exact Mortarboard Graduation Cap */}
+                  <svg className="w-5 h-5 shrink-0 text-[#E5B22E] fill-current" viewBox="0 0 24 24">
+                    <path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z"/>
+                  </svg>
                   <span>Professional Courses</span>
                 </Link>
               </li>
               <li>
-                <Link href="/certifications" className="hover:text-white transition-colors flex items-center gap-2.5">
-                  <Award className="w-4 h-4 text-[#E5B22E] shrink-0 fill-[#E5B22E]/10" />
+                <Link href="/certifications" className="hover:text-white transition-colors flex items-center gap-3">
+                  {/* Certifications - Exact Medal Badge with Ribbons */}
+                  <svg className="w-5 h-5 shrink-0 text-[#E5B22E] fill-current" viewBox="0 0 24 24">
+                    <path d="M12 2C8.69 2 6 4.69 6 8c0 2.22 1.21 4.15 3 5.19V22l3-2 3 2v-8.81c1.79-1.04 3-2.97 3-5.19 0-3.31-2.69-6-6-6zm0 9c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z"/>
+                  </svg>
                   <span>Certifications</span>
                 </Link>
               </li>
               <li>
-                <Link href="/training" className="hover:text-white transition-colors flex items-center gap-2.5">
-                  <TrendingUp className="w-4 h-4 text-[#E5B22E] shrink-0" />
+                <Link href="/training" className="hover:text-white transition-colors flex items-center gap-3">
+                  {/* Job Ready Training - Exact Bar Chart + Upward Trend Arrow */}
+                  <svg className="w-5 h-5 shrink-0 text-[#E5B22E] fill-current" viewBox="0 0 24 24">
+                    <path d="M3.5 18h3v-6h-3v6zm5 0h3v-9h-3v9zm5 0h3v-13h-3v13zm5 0h3v-17h-3v17z"/>
+                    <path d="M16 4l2.29 2.29-4.88 4.88-4-4L2 14.59 3.41 16l6-6 4 4 6.3-6.29L22 10V4h-6z"/>
+                  </svg>
                   <span>Job Ready Training</span>
                 </Link>
               </li>
               <li>
-                <Link href="/solutions" className="hover:text-white transition-colors flex items-center gap-2.5">
-                  <Briefcase className="w-4 h-4 text-[#E5B22E] shrink-0 fill-[#E5B22E]/10" />
+                <Link href="/solutions" className="hover:text-white transition-colors flex items-center gap-3">
+                  {/* Strategic Solutions - Exact Briefcase */}
+                  <svg className="w-5 h-5 shrink-0 text-[#E5B22E] fill-current" viewBox="0 0 24 24">
+                    <path d="M20 6h-4V4c0-1.11-.89-2-2-2h-4c-1.11 0-2 .89-2 2v2H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-6 0h-4V4h4v2z"/>
+                  </svg>
                   <span>Strategic Solutions</span>
                 </Link>
               </li>
@@ -217,19 +231,29 @@ export default function Footer({ onOpenEnquireModal }: FooterProps) {
               <div className="w-6 h-[2px] bg-[#C69214] mt-1 rounded-full"></div>
             </div>
             
-            <ul className="space-y-3 text-xs font-semibold text-slate-300">
-              <li className="flex items-start gap-2.5">
-                <MapPin className="w-4 h-4 text-[#E5B22E] shrink-0 mt-0.5 fill-[#E5B22E]/10" />
+            <ul className="space-y-3.5 text-xs font-semibold text-slate-300">
+              <li className="flex items-start gap-3">
+                {/* Location Pin - Exact Solid Gold Teardrop Marker */}
+                <svg className="w-5 h-5 shrink-0 text-[#E5B22E] fill-current mt-0.5" viewBox="0 0 24 24">
+                  <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                </svg>
                 <span className="leading-tight">
                   6-6-114/2, Kavadiguda Main Road, Hyderabad, TG - 500 080
                 </span>
               </li>
-              <li className="flex items-center gap-2.5">
-                <Phone className="w-4 h-4 text-[#E5B22E] shrink-0 fill-[#E5B22E]/10" />
+              <li className="flex items-center gap-3">
+                {/* Phone Handset - Exact Solid Gold Handset with Wave Signal Arcs */}
+                <svg className="w-5 h-5 shrink-0 text-[#E5B22E] fill-current" viewBox="0 0 24 24">
+                  <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 0 0-1.01.24l-2.2 2.2c-2.83-1.44-5.15-3.75-6.59-6.59l2.2-2.21c.28-.26.36-.65.25-1.01A11.36 11.36 0 0 1 8.5 4c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1 0 9.39 7.61 17 17 17 .55 0 1-.45 1-1v-3.5c0-.55-.45-1-1-1z"/>
+                  <path d="M14 4h2a5 5 0 0 1 5 5v2" fill="none" stroke="#E5B22E" strokeWidth="2.5" strokeLinecap="round" />
+                </svg>
                 <span>9849033736</span>
               </li>
-              <li className="flex items-center gap-2.5">
-                <Mail className="w-4 h-4 text-[#E5B22E] shrink-0 fill-[#E5B22E]/10" />
+              <li className="flex items-center gap-3">
+                {/* Envelope - Exact Solid Gold Envelope */}
+                <svg className="w-5 h-5 shrink-0 text-[#E5B22E] fill-current" viewBox="0 0 24 24">
+                  <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                </svg>
                 <a href="mailto:info@assettally.com" className="hover:text-white transition-colors">
                   info@assettally.com
                 </a>

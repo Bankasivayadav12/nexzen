@@ -18,14 +18,17 @@ export const metadata: Metadata = {
   title: "NEXZEN ASSET | From Education to Employment. From Skills to Strategy.",
   description: "A unified ecosystem for academic learning, professional qualifications, industry certifications, finance job training and strategic solutions. 25+ Years Legacy.",
   icons: {
-    icon: "/logo.jpg",
-    shortcut: "/logo.jpg",
-    apple: "/logo.jpg",
+    icon: [
+      { url: "/logo1.png", type: "image/png" },
+      { url: "/favicon.ico" }
+    ],
+    shortcut: "/logo1.png",
+    apple: "/logo1.png",
   },
   openGraph: {
     title: "NEXZEN ASSET PRIVATE LIMITED",
     description: "An evolution of Asset Integrated Info Systems · 25+ Years Legacy",
-    images: ["/logo.jpg"],
+    images: ["/logo1.png"],
   },
 };
 
