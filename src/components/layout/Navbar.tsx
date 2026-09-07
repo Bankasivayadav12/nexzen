@@ -36,7 +36,7 @@ export default function Navbar({ onOpenEnquireModal }: NavbarProps) {
   }, []);
 
   return (
-    <header className="sticky top-0 z-50 w-full pt-2 sm:pt-4 pb-2 px-3 sm:px-6 lg:px-10 transition-all duration-300 relative overflow-hidden bg-gradient-to-r from-[#EBF3FF] via-[#F4F8FF] to-[#3B82F6]/90">
+    <header className="sticky top-0 z-50 w-full pt-1 sm:pt-1.5 pb-0.5 sm:pb-1 px-3 sm:px-6 lg:px-10 transition-all duration-300 relative overflow-hidden bg-gradient-to-r from-[#EBF3FF] via-[#F4F8FF] to-[#3B82F6]/90">
       
       {/* Decorative Top Left Blue Fluid Curve */}
       <div className="absolute top-0 left-0 w-[280px] h-full pointer-events-none opacity-60">
@@ -56,8 +56,8 @@ export default function Navbar({ onOpenEnquireModal }: NavbarProps) {
       <div
         className={`max-w-7xl mx-auto rounded-full transition-all duration-300 relative z-10 ${
           scrolled
-            ? "bg-white/98 backdrop-blur-xl border border-blue-100 shadow-[0_10px_35px_-10px_rgba(9,31,56,0.12)] py-2 px-4 sm:px-8"
-            : "bg-white border border-blue-100/80 shadow-[0_6px_25px_-5px_rgba(9,31,56,0.06)] py-2 sm:py-2.5 px-4 sm:px-8"
+            ? "bg-white/98 backdrop-blur-xl border border-blue-100 shadow-[0_10px_35px_-10px_rgba(9,31,56,0.12)] py-1.5 px-4 sm:px-6"
+            : "bg-white border border-blue-100/80 shadow-[0_6px_25px_-5px_rgba(9,31,56,0.06)] py-1.5 sm:py-2 px-4 sm:px-6"
         }`}
       >
         <div className="flex items-center justify-between gap-3 sm:gap-6">

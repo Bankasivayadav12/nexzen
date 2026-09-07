@@ -10,12 +10,12 @@ interface HeroSectionProps {
 
 export default function HeroSection({ onOpenEnquireModal }: HeroSectionProps) {
   return (
-    <section className="relative w-full py-4 sm:py-6 lg:py-8 overflow-hidden bg-gradient-to-b from-[#F2F7FE] via-[#F8FAFD] to-[#EDF3FA]">
+    <section className="relative w-full py-3 sm:py-5 lg:py-6 overflow-hidden bg-gradient-to-b from-[#F2F7FE] via-[#F8FAFD] to-[#EDF3FA]">
       
       {/* Multi-Color Ambient Glow Orbs */}
-      <div className="absolute top-10 left-10 w-96 h-96 bg-blue-400/15 blur-[110px] rounded-full pointer-events-none -z-0"></div>
+      <div className="absolute top-6 left-10 w-96 h-96 bg-blue-400/15 blur-[110px] rounded-full pointer-events-none -z-0"></div>
       <div className="absolute top-1/3 right-1/3 w-80 h-80 bg-amber-400/15 blur-[100px] rounded-full pointer-events-none -z-0"></div>
-      <div className="absolute bottom-10 right-10 w-96 h-96 bg-purple-400/10 blur-[120px] rounded-full pointer-events-none -z-0"></div>
+      <div className="absolute bottom-6 right-10 w-96 h-96 bg-purple-400/10 blur-[120px] rounded-full pointer-events-none -z-0"></div>
 
       {/* SVG Wave Layer 1: Top-Left Soft Blue & Gold Fluid Wave */}
       <div className="absolute top-0 left-0 w-[540px] h-[300px] pointer-events-none -z-0 opacity-85">
@@ -36,7 +36,7 @@ export default function HeroSection({ onOpenEnquireModal }: HeroSectionProps) {
       </div>
 
       {/* Decorative Pattern 1: Blue Dotted Grid on Top Left */}
-      <div className="absolute top-8 left-8 w-24 h-24 pointer-events-none opacity-20 hidden md:grid grid-cols-6 gap-2">
+      <div className="absolute top-6 left-8 w-24 h-24 pointer-events-none opacity-20 hidden md:grid grid-cols-6 gap-2">
         {[...Array(36)].map((_, i) => (
           <div key={i} className="w-1.5 h-1.5 rounded-full bg-[#0066FF]"></div>
         ))}
@@ -85,27 +85,27 @@ export default function HeroSection({ onOpenEnquireModal }: HeroSectionProps) {
         </svg>
       </div>
 
-      <div className="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-12 relative z-20">
-        {/* Main Content Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-stretch">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-12 relative z-20 w-full flex flex-col space-y-3 sm:space-y-4 lg:space-y-5">
+        {/* Main Content Grid matching reference image */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-8 items-center py-0.5">
           {/* Left Column: Headline, Buttons & Stat Cards */}
-          <div className="lg:col-span-6 flex">
+          <div className="lg:col-span-6 flex items-center">
             <HeroContent onOpenEnquireModal={onOpenEnquireModal} />
           </div>
 
           {/* Right Column: Hero Visual Image Card */}
-          <div className="flex lg:col-span-6">
+          <div className="flex lg:col-span-6 items-center justify-center h-full">
             <HeroVisual />
           </div>
         </div>
 
-        {/* Bottom Right Tagline Bar */}
-        <div className="mt-6 pt-4 border-t border-slate-200/60 flex flex-wrap items-center justify-between text-[11px] font-black text-slate-500 tracking-[0.18em] uppercase gap-2">
+        {/* Bottom Right Tagline Bar matching reference image */}
+        <div className="pt-2 border-t border-slate-200/60 flex flex-wrap items-center justify-between text-[10px] sm:text-[11px] font-black text-slate-500 tracking-[0.16em] uppercase gap-2">
           <div className="flex items-center gap-2">
             <span className="w-2.5 h-2.5 rounded-full bg-[#0066FF] inline-block animate-pulse shadow-xs"></span>
             <span className="text-[#091F38]">NEXZEN ASSET ECOSYSTEM</span>
           </div>
-          <div className="flex items-center space-x-3 sm:space-x-5 text-slate-600 font-bold">
+          <div className="flex items-center space-x-3 sm:space-x-4 text-slate-600 font-bold">
             <span className="hover:text-[#0066FF] transition-colors">PEOPLE</span>
             <span className="text-slate-300 font-normal">|</span>
             <span className="hover:text-[#0066FF] transition-colors">SKILLS</span>
@@ -119,6 +119,3 @@ export default function HeroSection({ onOpenEnquireModal }: HeroSectionProps) {
     </section>
   );
 }
-
-
-
