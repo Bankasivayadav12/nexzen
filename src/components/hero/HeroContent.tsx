@@ -44,13 +44,13 @@ export default function HeroContent({ onOpenEnquireModal }: HeroContentProps) {
       variants={containerVariants}
       initial="hidden"
       animate="visible"
-      className="flex flex-col justify-center space-y-2 sm:space-y-2.5 lg:space-y-3 py-0.5 w-full"
+      className="flex flex-col justify-center space-y-3 sm:space-y-3.5 lg:space-y-4 py-1 w-full"
     >
       {/* Top Pill Tag Badge matching screenshot */}
       <motion.div variants={itemVariants}>
         <motion.div
           whileHover={{ scale: 1.04 }}
-          className="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-[#EBF3FF] border border-[#D0E2FF] text-[#0066FF] font-black text-[10px] sm:text-xs tracking-[0.16em] uppercase shadow-2xs cursor-default"
+          className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-[#EBF3FF] border border-[#D0E2FF] text-[#0066FF] font-black text-[10px] sm:text-xs tracking-[0.16em] uppercase shadow-2xs cursor-default"
         >
           <span>LEARN</span>
           <span className="text-blue-300 font-normal">|</span>
@@ -61,10 +61,10 @@ export default function HeroContent({ onOpenEnquireModal }: HeroContentProps) {
       </motion.div>
 
       {/* Main Headline & Paragraph matching screenshot */}
-      <div className="space-y-1 sm:space-y-1.5">
+      <div className="space-y-1.5 sm:space-y-2">
         <motion.h1
           variants={itemVariants}
-          className="text-2xl sm:text-3xl lg:text-[36px] xl:text-[42px] font-black text-[#091F38] leading-[1.12] tracking-tight"
+          className="text-2xl sm:text-3xl lg:text-[38px] xl:text-[44px] font-black text-[#091F38] leading-[1.14] tracking-tight"
         >
           From Education to <br className="hidden sm:inline" />
           Employment. <br className="hidden sm:inline" />
@@ -80,7 +80,7 @@ export default function HeroContent({ onOpenEnquireModal }: HeroContentProps) {
         </motion.h1>
         <motion.p
           variants={itemVariants}
-          className="text-slate-600 text-xs sm:text-sm lg:text-[14px] font-medium max-w-xl leading-relaxed"
+          className="text-slate-600 text-xs sm:text-sm lg:text-[15px] font-medium max-w-xl leading-relaxed"
         >
           A unified ecosystem for academic learning, professional qualifications,
           industry certifications, finance job training and strategic solutions.
@@ -90,7 +90,7 @@ export default function HeroContent({ onOpenEnquireModal }: HeroContentProps) {
       {/* Main Action Buttons matching screenshot */}
       <motion.div
         variants={itemVariants}
-        className="flex flex-wrap items-center gap-2 sm:gap-2.5 pt-0.5"
+        className="flex flex-wrap items-center gap-2.5 sm:gap-3 pt-1"
       >
         {/* Explore Programs Button with Blue-to-Gold Gradient */}
         <motion.button
@@ -101,7 +101,7 @@ export default function HeroContent({ onOpenEnquireModal }: HeroContentProps) {
             if (el) el.scrollIntoView({ behavior: "smooth" });
             else window.location.href = "/academics";
           }}
-          className="relative overflow-hidden bg-gradient-to-r from-[#0052FF] via-[#0066FF] to-[#D98E04] text-white font-extrabold text-xs sm:text-sm px-4.5 sm:px-5 py-2 sm:py-2.5 rounded-full shadow-md shadow-blue-500/20 transition-all duration-300 flex items-center gap-2 text-center cursor-pointer group"
+          className="relative overflow-hidden bg-gradient-to-r from-[#0052FF] via-[#0066FF] to-[#D98E04] text-white font-extrabold text-xs sm:text-sm px-5 sm:px-6 py-2.5 sm:py-3 rounded-full shadow-md shadow-blue-500/20 transition-all duration-300 flex items-center gap-2 text-center cursor-pointer group"
         >
           <span className="absolute top-0 left-0 w-full h-full bg-white/20 -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></span>
           <span>Explore Programs</span>
@@ -113,7 +113,7 @@ export default function HeroContent({ onOpenEnquireModal }: HeroContentProps) {
           whileHover={{ scale: 1.03, backgroundColor: "#F8FAFC" }}
           whileTap={{ scale: 0.97 }}
           onClick={onOpenEnquireModal}
-          className="bg-white text-[#09101D] font-bold text-xs sm:text-sm px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-full border border-slate-200/90 shadow-2xs transition-all duration-200 flex items-center gap-1.5 text-center cursor-pointer"
+          className="bg-white text-[#09101D] font-bold text-xs sm:text-sm px-4 sm:px-4.5 py-2.5 sm:py-3 rounded-full border border-slate-200/90 shadow-2xs transition-all duration-200 flex items-center gap-1.5 text-center cursor-pointer"
         >
           <Calendar className="w-3.5 h-3.5 text-[#0066FF]" />
           <span>Upcoming Batches</span>
@@ -124,7 +124,7 @@ export default function HeroContent({ onOpenEnquireModal }: HeroContentProps) {
           whileHover={{ scale: 1.03, backgroundColor: "#F8FAFC" }}
           whileTap={{ scale: 0.97 }}
           onClick={onOpenEnquireModal}
-          className="bg-white text-[#09101D] font-bold text-xs sm:text-sm px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-full border border-slate-200/90 shadow-2xs transition-all duration-200 flex items-center gap-1.5 text-center cursor-pointer"
+          className="bg-white text-[#09101D] font-bold text-xs sm:text-sm px-4 sm:px-4.5 py-2.5 sm:py-3 rounded-full border border-slate-200/90 shadow-2xs transition-all duration-200 flex items-center gap-1.5 text-center cursor-pointer"
         >
           <Headphones className="w-3.5 h-3.5 text-[#0066FF]" />
           <span>Talk to a Counselor</span>
@@ -134,17 +134,17 @@ export default function HeroContent({ onOpenEnquireModal }: HeroContentProps) {
       {/* 3 Bottom Stat Cards matching screenshot */}
       <motion.div
         variants={itemVariants}
-        className="grid grid-cols-1 sm:grid-cols-3 gap-2 sm:gap-2.5 pt-0.5"
+        className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 sm:gap-3 pt-1"
       >
         {/* Card 1: 25+ Years */}
         <motion.div
           variants={cardVariants}
           whileHover={{ y: -3, scale: 1.01, boxShadow: "0 10px 20px -6px rgba(0, 102, 255, 0.14)" }}
           transition={{ type: "spring", stiffness: 350, damping: 22 }}
-          className="bg-white p-2.5 sm:p-3 rounded-xl sm:rounded-2xl border border-slate-100 shadow-2xs transition-all duration-200 text-left flex flex-col justify-between relative overflow-hidden group cursor-default"
+          className="bg-white p-3 sm:p-3.5 rounded-xl sm:rounded-2xl border border-slate-100 shadow-2xs transition-all duration-200 text-left flex flex-col justify-between relative overflow-hidden group cursor-default"
         >
           <div>
-            <div className="w-7 h-7 rounded-full bg-blue-50 border border-blue-100 flex items-center justify-center mb-1.5 group-hover:scale-110 transition-transform">
+            <div className="w-7.5 h-7.5 rounded-full bg-blue-50 border border-blue-100 flex items-center justify-center mb-1.5 group-hover:scale-110 transition-transform">
               <Award className="w-3.5 h-3.5 text-[#0066FF]" />
             </div>
             <div className="text-sm sm:text-base font-black text-[#09101D] tracking-tight">
@@ -154,7 +154,7 @@ export default function HeroContent({ onOpenEnquireModal }: HeroContentProps) {
               Industry Legacy & Expertise
             </div>
           </div>
-          <div className="w-5 h-0.5 bg-[#0066FF] rounded-full mt-2 group-hover:w-8 transition-all duration-300"></div>
+          <div className="w-5 h-0.5 bg-[#0066FF] rounded-full mt-2.5 group-hover:w-8 transition-all duration-300"></div>
         </motion.div>
 
         {/* Card 2: Industry-Ready */}
@@ -162,10 +162,10 @@ export default function HeroContent({ onOpenEnquireModal }: HeroContentProps) {
           variants={cardVariants}
           whileHover={{ y: -3, scale: 1.01, boxShadow: "0 10px 20px -6px rgba(198, 146, 20, 0.14)" }}
           transition={{ type: "spring", stiffness: 350, damping: 22 }}
-          className="bg-white p-2.5 sm:p-3 rounded-xl sm:rounded-2xl border border-slate-100 shadow-2xs transition-all duration-200 text-left flex flex-col justify-between relative overflow-hidden group cursor-default"
+          className="bg-white p-3 sm:p-3.5 rounded-xl sm:rounded-2xl border border-slate-100 shadow-2xs transition-all duration-200 text-left flex flex-col justify-between relative overflow-hidden group cursor-default"
         >
           <div>
-            <div className="w-7 h-7 rounded-full bg-amber-50 border border-amber-100 flex items-center justify-center mb-1.5 group-hover:scale-110 transition-transform">
+            <div className="w-7.5 h-7.5 rounded-full bg-amber-50 border border-amber-100 flex items-center justify-center mb-1.5 group-hover:scale-110 transition-transform">
               <Briefcase className="w-3.5 h-3.5 text-[#C69214]" />
             </div>
             <div className="text-sm sm:text-base font-black text-[#09101D] tracking-tight">
@@ -175,7 +175,7 @@ export default function HeroContent({ onOpenEnquireModal }: HeroContentProps) {
               Practical, Role-Based Learning
             </div>
           </div>
-          <div className="w-5 h-0.5 bg-[#C69214] rounded-full mt-2 group-hover:w-8 transition-all duration-300"></div>
+          <div className="w-5 h-0.5 bg-[#C69214] rounded-full mt-2.5 group-hover:w-8 transition-all duration-300"></div>
         </motion.div>
 
         {/* Card 3: Career Support */}
@@ -183,10 +183,10 @@ export default function HeroContent({ onOpenEnquireModal }: HeroContentProps) {
           variants={cardVariants}
           whileHover={{ y: -3, scale: 1.01, boxShadow: "0 10px 20px -6px rgba(147, 51, 234, 0.14)" }}
           transition={{ type: "spring", stiffness: 350, damping: 22 }}
-          className="bg-white p-2.5 sm:p-3 rounded-xl sm:rounded-2xl border border-slate-100 shadow-2xs transition-all duration-200 text-left flex flex-col justify-between relative overflow-hidden group cursor-default"
+          className="bg-white p-3 sm:p-3.5 rounded-xl sm:rounded-2xl border border-slate-100 shadow-2xs transition-all duration-200 text-left flex flex-col justify-between relative overflow-hidden group cursor-default"
         >
           <div>
-            <div className="w-7 h-7 rounded-full bg-purple-50 border border-purple-100 flex items-center justify-center mb-1.5 group-hover:scale-110 transition-transform">
+            <div className="w-7.5 h-7.5 rounded-full bg-purple-50 border border-purple-100 flex items-center justify-center mb-1.5 group-hover:scale-110 transition-transform">
               <Users className="w-3.5 h-3.5 text-[#9333EA]" />
             </div>
             <div className="text-sm sm:text-base font-black text-[#09101D] tracking-tight">
@@ -196,12 +196,12 @@ export default function HeroContent({ onOpenEnquireModal }: HeroContentProps) {
               Training to Employment Journey
             </div>
           </div>
-          <div className="w-5 h-0.5 bg-[#9333EA] rounded-full mt-2 group-hover:w-8 transition-all duration-300"></div>
+          <div className="w-5 h-0.5 bg-[#9333EA] rounded-full mt-2.5 group-hover:w-8 transition-all duration-300"></div>
         </motion.div>
       </motion.div>
 
       {/* Slogan Bar at Left Bottom matching screenshot */}
-      <motion.div variants={itemVariants} className="pt-0.5">
+      <motion.div variants={itemVariants} className="pt-1">
         <div className="text-[10px] sm:text-[11px] font-extrabold tracking-widest text-[#C69214] uppercase flex items-center gap-2">
           <span className="w-4 h-0.5 bg-[#C69214] inline-block rounded-full"></span>
           <span>SKILLS TODAY. A BRIGHTER TOMORROW.</span>

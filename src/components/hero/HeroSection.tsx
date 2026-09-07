@@ -85,9 +85,9 @@ export default function HeroSection({ onOpenEnquireModal }: HeroSectionProps) {
         </svg>
       </div>
 
-      <div className="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-12 relative z-20 w-full flex flex-col space-y-3 sm:space-y-4 lg:space-y-5">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-12 relative z-20 w-full flex flex-col space-y-4 sm:space-y-5 lg:space-y-6">
         {/* Main Content Grid matching reference image */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-8 items-center py-0.5">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center py-1">
           {/* Left Column: Headline, Buttons & Stat Cards */}
           <div className="lg:col-span-6 flex items-center">
             <HeroContent onOpenEnquireModal={onOpenEnquireModal} />
